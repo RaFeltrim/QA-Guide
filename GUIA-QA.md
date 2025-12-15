@@ -27,9 +27,9 @@ Este guia apresenta um percurso de aprendizagem e entregáveis práticos para QA
   - Browser, Postman, Excel/Google Sheets
   - VS Code (editor)
 - Exercícios práticos:
-  - Seguir os exercícios básicos do material: [shift-left-testing README](CNPJ-Docs/docs/testing/shift-left-testing/README.md#L1) → seção “Para Iniciantes”
-  - Executar os casos de teste do nível básico: [03-exercicios/01-nivel-basico](CNPJ-Docs/docs/testing/shift-left-testing/03-exercicios/01-nivel-basico.md#L1)
-  - Validar massa de dados simples em: [casos-teste-realistas.md](CNPJ-Docs/docs/testing/casos-teste-realistas.md#L1)
+  - Seguir os exercícios básicos do material: [Shift Left Testing — README](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/shift-left-testing/README.md)
+  - Executar os casos de teste do nível básico: [03-exercicios/01-nivel-basico](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/shift-left-testing/03-exercicios/01-nivel-basico.md)
+  - Validar massa de dados simples em: [Casos de Teste Realistas](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/casos-teste-realistas.md)
 - Critério de saída:
   - Executa e documenta 10 casos básicos sem supervisão
 
@@ -47,9 +47,9 @@ Este guia apresenta um percurso de aprendizagem e entregáveis práticos para QA
 - Ferramentas:
   - Python/TypeScript, pytest/jest, GitHub Actions (noções)
 - Exercícios práticos:
-  - Implementar `validarCNPJ()` com testes unitários (veja exemplo e arquitetura em: [guia-implementacao.md](CNPJ-Docs/docs/guides/guia-implementacao.md#L1))
-  - Cobrir casos de teste reais: [casos-teste-realistas.md](CNPJ-Docs/docs/testing/casos-teste-realistas.md#L1)
-  - Seguir plano de estudo (dias 1–3): [plano-estudo.md](CNPJ-Docs/docs/training/plano-estudo.md#L1)
+  - Implementar `validarCNPJ()` com testes unitários (veja exemplo e arquitetura em: [Guia de Implementação (validador)](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/guides/guia-implementacao.md))
+  - Cobrir casos de teste reais: [Casos de Teste Realistas](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/casos-teste-realistas.md)
+  - Seguir plano de estudo (dias 1–3): [Plano de Estudo / Treinamento](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/training/plano-estudo.md)
 - Critério de saída:
   - Testes unitários com cobertura mínima definida pela equipe (ex.: >80%) e documentação de 5 bugs reproduzíveis
 
@@ -67,8 +67,8 @@ Este guia apresenta um percurso de aprendizagem e entregáveis práticos para QA
 - Ferramentas:
   - CI/CD (GitHub Actions), Cypress/Playwright, k6, pytest/jest avançado
 - Exercícios práticos:
-  - Implementar pipeline com runs de unit + integration + E2E (veja exemplos: [shift-left-testing exemplos práticos](CNPJ-Docs/docs/testing/shift-left-testing/05-exemplos-pratica/README.md#L1))
-  - Projetar massa de testes realistas a partir de [casos-teste-realistas.md](CNPJ-Docs/docs/testing/casos-teste-realistas.md#L1)
+  - Implementar pipeline com runs de unit + integration + E2E (veja exemplos: [Shift Left Testing — Exemplos Práticos](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/shift-left-testing/05-exemplos-pratica/README.md))
+  - Projetar massa de testes realistas a partir de [Casos de Teste Realistas](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/casos-teste-realistas.md)
 - Critério de saída:
   - Pipeline automatizado com gatilhos em PRs e relatórios reproduzíveis
 
@@ -87,8 +87,8 @@ Este guia apresenta um percurso de aprendizagem e entregáveis práticos para QA
   - Integração com security scans (bandit, safety), monitoramento e alerting
   - Testes de performance e análise de capacidade
 - Exercícios práticos:
-  - Criar um plano de adoção Shift Left para um produto (base: [shift-left-testing README](CNPJ-Docs/docs/testing/shift-left-testing/README.md#L1))
-  - Mapear riscos e políticas de logs/LGPD (veja plano de estudo, dia 6): [plano-estudo.md](CNPJ-Docs/docs/training/plano-estudo.md#L1)
+  - Criar um plano de adoção Shift Left para um produto (base: [Shift Left Testing — README](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/shift-left-testing/README.md))
+  - Mapear riscos e políticas de logs/LGPD (veja plano de estudo, dia 6): [Plano de Estudo / Treinamento](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/training/plano-estudo.md)
 - Critério de saída:
   - Roadmap aprovável pela liderança com KPIs e plano de execução
 
@@ -101,10 +101,10 @@ Este guia apresenta um percurso de aprendizagem e entregáveis práticos para QA
 - Gabaritos e correções comentadas para feedback contínuo
 
 Referências internas que servem de base para este guia:
-- [shift-left-testing README](CNPJ-Docs/docs/testing/shift-left-testing/README.md#L1)
-- [Casos de Teste Realistas](CNPJ-Docs/docs/testing/casos-teste-realistas.md#L1)
-- [Guia de Implementação (validador)](CNPJ-Docs/docs/guides/guia-implementacao.md#L1)
-- [Plano de Estudo / Treinamento](CNPJ-Docs/docs/training/plano-estudo.md#L1)
+- [Shift Left Testing — README](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/shift-left-testing/README.md)
+- [Casos de Teste Realistas](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/casos-teste-realistas.md)
+- [Guia de Implementação (validador)](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/guides/guia-implementacao.md)
+- [Plano de Estudo / Treinamento](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/training/plano-estudo.md)
 
 ---
 
