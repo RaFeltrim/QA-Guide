@@ -4,7 +4,7 @@ Objetivo: ganhar prática em execução de testes manuais, reporte de bugs e ver
 
 Tarefas:
 
-1. Execute 10 casos básicos listados em `CNPJ-Docs/docs/testing/casos-teste-realistas.md` (CT-001 a CT-005 e CT-006 a CT-010). Documente passos, entrada, resultado e evidências (screenshots).
+1. Execute 10 casos básicos listados em [Casos de Teste Realistas](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/casos-teste-realistas.md) (CT-001 a CT-005 e CT-006 a CT-010). Documente passos, entrada, resultado e evidências (screenshots).
 2. Reproduza e reporte 3 bugs reais: cada bug deve conter título, passos, resultado esperado, resultado observado e evidências.
 3. Validar massa de dados: normalize 20 CNPJs (formatados e sem formatação) e checar se o sistema aceita/rejeita conforme o esperado.
 4. Preencher checklist de QA manual: ambiente, dados, pré-condições, passos, pós-condições.

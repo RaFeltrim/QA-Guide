@@ -214,7 +214,4 @@ Este repositório está aberto a contribuições; defina a licença desejada (po
 
 ---
 
-Boa aprendizagem! Se quiser, eu posso:
-- Adicionar `.github/workflows/ci.yml` com um pipeline inicial;
-- Gerar fixtures CSV/JSON para os exercícios do nível Júnior;
-- Criar templates MD para entregas (bug report, checklist) dentro de `gabarito/`.
+Boa aprendizagem!

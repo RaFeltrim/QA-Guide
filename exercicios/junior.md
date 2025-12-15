@@ -4,13 +4,13 @@ Objetivo: implementar validação automatizada, testes unitários e cobrir casos
 
 Tarefas:
 
-1. Implementar `validarCNPJ()` (TypeScript ou Python) conforme `CNPJ-Docs/docs/guides/guia-implementacao.md`.
+1. Implementar `validarCNPJ()` (TypeScript ou Python) conforme [Guia de Implementação (validador)](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/guides/guia-implementacao.md).
 2. Escrever uma suite de testes unitários cobrindo:
    - Casos happy-path (CT-001 a CT-005)
    - Formatos inválidos (CT-006 a CT-010)
    - Dígitos verificadores (CT-011 a CT-015)
    - Edge-cases (CT-016 a CT-018)
-3. Criar fixture com 100 CNPJs mistos (válidos/inválidos) e rodar os testes.
+3. Criar fixture com 100 CNPJs mistos (válidos/inválidos) — exemplo em `fixtures/cnpjs.csv` e `fixtures/cnpjs.json` — e rodar os testes.
 4. Gerar relatório de cobertura (meta mínima: definida pela equipe, ex.: 80%).
 5. Entrega: PR com código + `README.md` explicando como rodar os testes localmente.
 
