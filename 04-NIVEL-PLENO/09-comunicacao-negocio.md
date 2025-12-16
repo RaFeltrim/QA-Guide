@@ -1,3 +1,12 @@
+# 09 — Comunicação com o Negócio
+
+Objetivo: posicionar QA como ponte entre produto e engenharia.
+
+- Falar a língua do produto: impacto, risco, ROI
+- Traduzir bugs técnicos em impacto de negócio
+- Relatórios concisos para stakeholders (executive summary)
+
+Exercício: preparar um resumo de qualidade para o último release em até 3 bullets.
 ```markdown
 # Comunicação e Soft Skills para Negócio (Pleno)
 

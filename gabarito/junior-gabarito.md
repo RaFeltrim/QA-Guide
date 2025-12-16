@@ -1,3 +1,13 @@
+# Gabarito — Júnior
+
+Referências e soluções para os exercícios propostos.
+
+1. Implementação: ver `gabarito/exemplos-codigo/validador-cnpj.py` — função `is_valid_cnpj` que limpa entrada, verifica tamanho, rejeita sequências e calcula dígitos verificadores.
+2. Testes: exemplos em `gabarito/exemplos-codigo/test-validador.py` usando `pytest.mark.parametrize`.
+3. README: instruções mínimas — criar venv, instalar `pytest`, rodar `pytest -q`.
+4. CI (exemplo): workflow deve instalar dependências e rodar `pytest`; falhar o build quando testes falharem.
+
+Notas: usar os arquivos do `gabarito/exemplos-codigo/` como base e adaptar ao layout do projeto.
 # Gabarito — Nível Júnior
 
 Este arquivo mapeia exercícios do nível Júnior para gabaritos automatizados e instruções de execução.

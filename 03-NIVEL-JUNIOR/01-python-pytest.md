@@ -1,3 +1,42 @@
+# 01 — Python & pytest (Guia Rápido)
+
+Objetivo: preparar o ambiente e ensinar práticas básicas de `pytest` para escrever testes unitários em Python.
+
+Setup rápido:
+- Criar virtualenv: `python -m venv .venv`
+- Ativar: Windows PowerShell: `.venv\Scripts\Activate.ps1` ou cmd: `.venv\Scripts\activate.bat`
+- Instalar pytest: `pip install -U pip pytest`
+
+Estrutura recomendada de pasta:
+
+- `src/` — código da aplicação
+- `tests/` — arquivos de teste, nome `test_*.py`
+
+Exemplo de teste (`tests/test_example.py`):
+
+```python
+from src.my_module import soma
+
+def test_soma_simples():
+    assert soma(2, 3) == 5
+```
+
+Rodando testes:
+
+```bash
+pytest -q
+```
+
+Boas práticas:
+- Testes pequenos e determinísticos
+- Usar fixtures para setup/teardown (módulo `pytest.fixture`)
+- Marcar testes lentos com `@pytest.mark.slow`
+- Cobertura: rodar com `pytest --cov` quando aplicável
+
+Dicas de debugging:
+- `-k` para filtrar testes por nome
+- `-x` falhar rápido
+- `--maxfail=1` limiter falhas
 # Python + pytest (Júnior)
 
 ## Seção 1 – Conceito e por que importa

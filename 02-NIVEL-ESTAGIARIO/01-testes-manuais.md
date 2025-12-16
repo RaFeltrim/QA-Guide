@@ -1,3 +1,13 @@
+# Testes Manuais — Guia Rápido
+
+Objetivo: ensinar o processo de executação de testes manuais e reportar resultados.
+
+- Preparação: pré-condições, ambiente, dados
+- Execução: passos claros, evidências (prints, logs)
+- Critério de passagem/falha
+- Registro: como documentar em ferramenta (ex.: Jira)
+
+Exercício: executar 3 casos funcionais simples e capturar evidências.
 # Testes Manuais — Guia Prático para Estagiários
 
 ## Seção 1 – Conceito e por que importa

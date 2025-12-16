@@ -1,3 +1,22 @@
+# 02 — Performance com k6
+
+Objetivo: apresentar k6 para testes de carga e métricas essenciais.
+
+- Instalação: `brew install k6` ou usar imagem Docker `loadimpact/k6`
+- Script básico (`script.js`):
+
+```js
+import http from 'k6/http';
+import { check } from 'k6';
+
+export default function() {
+  const res = http.get('https://example.com')
+  check(res, { 'status 200': r => r.status === 200 })
+}
+```
+
+Métricas: RPS, p95/p99 latência, erros por segundo, throughput.
+Boas práticas: começar com testes de baseline, parametrizar cenários e usar thresholds.
 # Performance com k6 — Nível Pleno
 
 Guia prático para criação de testes de performance usando `k6`. Contém configuração mínima, exemplos de scripts, integração com CI e exercício hands-on.

@@ -1,3 +1,12 @@
+# 08 — Inovação e Futuro do QA
+
+Temas estratégicos:
+- IA para geração de testes, análise de logs e automação de triagem
+- Observability e self-healing tests
+- Testes shift-right (canary, chaos, observability-driven)
+- Automação inteligente: priorização de testes baseada em risco
+
+Exercício: propor 3 experimentos de IA aplicáveis ao fluxo de QA da empresa e critérios de sucesso.
 ```markdown
 # Inovação e Futuro do QA (Sênior)
 

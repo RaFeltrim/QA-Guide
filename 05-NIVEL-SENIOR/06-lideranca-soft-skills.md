@@ -1,3 +1,12 @@
+# 06 — Liderança e Soft Skills
+
+Competências chave:
+- Comunicação não violenta e feedback efetivo
+- Gestão de conflitos e priorização estratégica
+- Tomada de decisão baseada em riscos e dados
+- Mentoria e desenvolvimento de carreira para o time
+
+Exercício: conduzir uma sessão de feedback estruturada (3 passos) com um colega.
 ```markdown
 # Liderança e Soft Skills Avançadas (Sênior)
 

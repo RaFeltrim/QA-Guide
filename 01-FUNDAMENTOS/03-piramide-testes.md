@@ -1,3 +1,9 @@
+# 03 — Pirâmide de Testes
+
+Descrição da pirâmide (unitários → integração → e2e) e justificativa de investimento.
+
+- Exemplos de cobertura esperada
+- Boas práticas para equilibrar custo x risco
 ```markdown
 # Pirâmide de Testes
 

@@ -8,7 +8,7 @@ from gabarito.exemplos_codigo.validador_cnpj import validar_cnpj
     [
         ("11.222.333/0001-81", True),
         ("11222333000181", True),
-        ("12.345.678/0002-95", True),
+        ("12.345.678/0002-95", False),
         ("11.222.333/0001-00", False),
         ("00.000.000/0000-00", False),
         ("11.222.333/0001-8", False),

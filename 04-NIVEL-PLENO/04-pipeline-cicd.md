@@ -1,3 +1,14 @@
+# 04 — Pipeline CI/CD para Testes
+
+Objetivo: descrever um pipeline básico com stages de build, test e deploy.
+
+Exemplo de stages:
+- build: instalar dependências, lint
+- test: unit + integration + cobertura
+- e2e: executar testes end-to-end em ambiente staging
+- report: publicar relatórios e artefatos
+
+Notas: usar artefatos para compartilhar builds; aplicar gates para aprovação manual quando necessário.
 ```markdown
 # Pipeline CI/CD (Pleno)
 

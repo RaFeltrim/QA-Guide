@@ -1,3 +1,21 @@
+# Template: Test Case
+
+- **ID:** TC-0001
+- **Título:** Descrição sucinta do caso
+- **Pré-condições:** (ex.: usuário criado, token válido)
+- **Dados de entrada:** (ex.: email, senha, payload)
+- **Passos:**
+  1. Passo 1
+  2. Passo 2
+  3. Passo 3
+- **Resultado esperado:** (descrição clara)
+- **Resultado obtido:** (preencher após execução)
+- **Critério de aceitação:** (pass/fail rules)
+- **Prioridade:** Baixa/Média/Alta
+- **Tipo:** Manual/Automatizado
+- **Tags / Componentes:** (ex.: login, API, UI)
+
+Bom para usar em repositórios de casos e ao gerar automações.
 # Template de Caso de Teste
 
 - **ID:**

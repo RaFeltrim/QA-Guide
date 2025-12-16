@@ -1,3 +1,13 @@
+# 05 — Adoção em Equipes
+
+Objetivo: criar um plano replicável para adoção de práticas de QA em múltiplas squads.
+
+- Estratégia: pilotos, champions, playbooks e kit de ferramentas
+- Treinamento: trilhas de aprendizado, workshops hands-on, pairing
+- Medição: acompanhar adoção via checklists e KPIs de qualidade
+- Sustentabilidade: grooming contínuo do playbook e feedback loops
+
+Exercício: elaborar um plano de rollout (3 squads em 6 semanas) com marcos e métricas.
 ```markdown
 # Adoção em Equipes (Sênior)
 

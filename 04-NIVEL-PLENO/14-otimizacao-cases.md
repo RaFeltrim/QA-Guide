@@ -1,3 +1,12 @@
+# 14 — Otimização de Casos de Teste
+
+Objetivos: reduzir volume manual mantendo cobertura.
+
+- Parametrização de casos para cobrir múltiplas entradas
+- Geração em massa (data-driven testing) com JSON/CSV
+- Revisão periódica: eliminar casos redundantes
+
+Exercício: transformar 10 casos manuais em 2 casos parametrizados com `pytest`.
 ```markdown
 # Otimização de Casos e Suites (Pleno)
 

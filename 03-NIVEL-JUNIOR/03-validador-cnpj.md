@@ -1,3 +1,26 @@
+# 03 — Validador de CNPJ (Descrição + Exercícios)
+
+Objetivo: explicar o algoritmo de validação do CNPJ e fornecer exemplos práticos em Python.
+
+Resumo do algoritmo:
+- Remover caracteres não numéricos
+- Verificar tamanho (14 dígitos)
+- Calcular primeiro dígito verificador com multiplicadores
+- Calcular segundo dígito verificador
+- Comparar dígitos calculados com os do CNPJ
+
+Exemplo (referência de implementação em `gabarito/exemplos-codigo/validador-cnpj.py`).
+
+Padrões a considerar:
+- Rejeitar sequências repetidas (ex.: '00000000000000')
+- Tratar entradas nulas ou com tamanho incorreto
+
+Exercícios sugeridos neste tópico:
+1. Implementar o validador em Python (usar a referência como base).
+2. Criar testes `pytest` cobrindo válidos e inválidos.
+3. Adicionar CLI simples que aceita CNPJ e imprime válido/inválido.
+
+Critério de aceitação: função `is_valid_cnpj(cnpj)` deve retornar boolean correto para uma lista de entradas de teste.
 # Validador de CNPJ (Júnior)
 
 ## Seção 1 – Conceito e por que importa

@@ -1,3 +1,12 @@
+# Fundamentos — Índice
+
+1. Conceitos básicos
+2. Tipos de teste
+3. Pirâmide de testes
+4. Métricas de qualidade
+5. Boas práticas
+
+Tempo estimado: 6 horas
 # 01 - Fundamentos
 
 Índice dos conceitos básicos de QA.

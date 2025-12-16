@@ -1,3 +1,14 @@
+# Bug Reports — Template e Boas Práticas
+
+Campos essenciais:
+- Título claro e conciso
+- Ambiente (browser, versão, OS)
+- Passos para reproduzir
+- Resultado esperado vs resultado observado
+- Evidências (logs, screenshots)
+- Severidade e prioridade sugerida
+
+Exemplo e template simples no final do arquivo.
 # Bug Reports — Como escrever e exemplos preenchidos
 
 ## Seção 1 – Conceito e por que importa

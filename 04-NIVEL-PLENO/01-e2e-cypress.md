@@ -1,3 +1,27 @@
+# 01 — E2E com Cypress
+
+Objetivo: introduzir Cypress para testes end-to-end e padrão Page Object Model (POM).
+
+- Instalação: `npm init -y && npm install cypress --save-dev`
+- Estrutura: `cypress/fixtures`, `cypress/integration`, `cypress/support`
+- POM: criar classes por página, expor ações (ex.: `LoginPage.login(user, pass)`)
+
+Exemplo rápido (pseudo):
+
+```js
+// cypress/integration/login.spec.js
+import LoginPage from '../pages/LoginPage'
+
+describe('Login', () => {
+  it('deve logar com credenciais válidas', () => {
+    LoginPage.visit()
+    LoginPage.login('user','pass')
+    LoginPage.assertLogged()
+  })
+})
+```
+
+Boas práticas: usar fixtures, comandos customizados (`Cypress.Commands.add`), e ambientes isolados.
 ```markdown
 # E2E com Cypress (Pleno)
 

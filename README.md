@@ -9,6 +9,11 @@ Sumário rápido
 - `04-NIVEL-PLENO/` — E2E (Cypress), performance (k6), padrões de pipeline e IA.
 - `gabarito/` — templates, exemplos de código e testes.
 - `fixtures/` — arquivos JSON com dados de exemplo.
+ - `fixtures/` — arquivos JSON com dados de exemplo.
+
+Veja também:
+- [ROADMAP.md](ROADMAP.md) — plano de entregas e prioridades
+- [CONTRIBUIR.md](CONTRIBUIR.md) — como contribuir com o projeto
 
 Pré-requisitos (local)
 

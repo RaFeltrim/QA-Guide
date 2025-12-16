@@ -1,3 +1,13 @@
+# 04 — Comunicação e Liderança
+
+Objetivo: desenvolver influência e clareza na comunicação com stakeholders.
+
+- Storytelling: apresentar riscos e trade-offs com dados e impactos de negócio
+- Reuniões: relatórios executivos curtos, decisões acionáveis
+- Influência: negociar prioridades com PO/CTO usando métricas
+- Coaching: treinar líderes de QA para evangelizar boas práticas
+
+Exercício: preparar um executive summary de 5 minutos para apresentar ao C-level sobre qualidade do último trimestre.
 ```markdown
 # Comunicação e Liderança (Sênior)
 

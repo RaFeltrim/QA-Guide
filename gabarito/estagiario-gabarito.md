@@ -1,5 +1,21 @@
 # Gabarito — Estagiário
 
+Respostas e exemplos para os exercícios propostos.
+
+1. Exemplos de 3 casos de teste para login (inclui ID, passos e resultado esperado).
+2. Modelo de evidência: captura de tela e log apresentados.
+3. Exemplos de bug reports preenchidos com severidade/priority.
+4. Checklist de ambiente: node/npm, variáveis, URL de staging.
+5. Lista sugerida de responsabilidades do QA.
+6. Exemplo de teste de smoke (passos mínimos).
+7. Exemplos de pré-condições para API (tokens, users criados).
+8. Sugestões de mascaramento: CPF/CNPJ, emails, tokens.
+9. Caso de teste preenchido de exemplo.
+10. Checklist de revisão com critérios de aceitação.
+
+Observação: usar este gabarito como referência — incentivar adaptações.
+# Gabarito — Estagiário
+
 Este gabarito apresenta respostas esperadas e exemplos comentados para os exercícios do nível Estagiário.
 
 ## Gabarito Exercício 1 — Execução do Caso de Teste de Login

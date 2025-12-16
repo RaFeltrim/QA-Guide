@@ -1,3 +1,12 @@
+# 11 — Database Avançado para Testers
+
+Conteúdo essencial:
+- Entender schemas, chaves primárias/estrangeiras e índices
+- Estratégias de testes com transações e rollback
+- Fixtures e seeds: como manter dados consistentes
+- Otimização de queries para evitar testes lentos
+
+Exercício: criar um script que popula a base com dados de testes e limpa após execução.
 ```markdown
 # Database Avançado para QA (Pleno)
 

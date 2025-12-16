@@ -1,3 +1,13 @@
+# 07 — Governança Agile para QA
+
+Objetivo: escalar práticas de QA mantendo agilidade e qualidade.
+
+- Modelos: guilds, chapters e centros de excelência
+- Processos: definição de padrões, templates e políticas de qualidade
+- Métricas de governança: compliance de pipelines, tempo de entrega, qualidade por squad
+- Riscos: burocracia vs autonomia — balancear via indicadores
+
+Exercício: desenhar a estrutura organizacional mínima para suportar 10 squads.
 ```markdown
 # Governança Agile (Sênior)
 

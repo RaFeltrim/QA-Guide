@@ -1,3 +1,19 @@
+# Exercícios — Estagiário (10)
+
+Objetivo: praticar conceitos básicos e produção de artefatos.
+
+1. Escrever 3 casos de teste para uma tela de login.
+2. Executar 2 casos manuais e anexar evidências.
+3. Criar 2 bug reports (com template) com severidade e prioridade.
+4. Preparar checklist de ambiente para testes locais.
+5. Listar 5 responsabilidades do QA em uma sprint.
+6. Planejar um teste de smoke para um deploy.
+7. Documentar 2 pré-condições comuns para testes de API.
+8. Identificar dados sensíveis e propor mascaramento.
+9. Criar 1 caso de teste com passos e resultado esperado.
+10. Revisar e melhorar um caso de teste existente.
+
+Critério de saída: o aluno deve completar ao menos 8/10 com evidências claras.
 # Exercícios — Estagiário
 
 Objetivo: ganhar prática em execução de testes manuais, reporte de bugs e verificação básica de validação de CNPJ.

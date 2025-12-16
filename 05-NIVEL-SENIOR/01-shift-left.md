@@ -1,3 +1,13 @@
+# 01 — Shift-Left Estratégico
+
+Objetivo: desenhar e implementar estratégias para antecipar qualidade no ciclo de produto.
+
+- Definição: QA envolvido desde discovery até release
+- Práticas: testes em ambientes de design, revisão de requisitos, definição de contratos
+- ROI: medir redução de defeitos em produção e tempo de correção
+- Implantação: pilotos por squad, evangelismo técnico, métricas de adoção
+
+Exercício: desenhar um plano de adoção shift-left para uma feature crítica (cronograma, stakeholders, métricas).
 ```markdown
 # Shift Left Estratégico (Sênior)
 

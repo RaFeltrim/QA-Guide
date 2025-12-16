@@ -1,3 +1,15 @@
+# 00 — Índice — Nível Sênior
+
+1. Shift-Left estratégico
+2. Métricas e KPIs
+3. Segurança e LGPD
+4. Comunicação e liderança
+5. Adoção em equipes
+6. Liderança e soft skills
+7. Governança Agile
+8. Inovação e futuro do QA
+
+Tempo estimado: 12-20 horas (deep-dive por tópico)
 # 05 - Nível Sênior
 
 Índice do conteúdo para QAs sênior.

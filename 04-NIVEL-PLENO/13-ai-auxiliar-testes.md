@@ -1,3 +1,13 @@
+# 13 — IA como Auxílio para Testes
+
+Aplicações práticas:
+- Geração de casos de teste a partir de requisitos
+- Análise de logs para identificar padrões de erro
+- Geração de dados de teste e prompts para prompt engineering
+
+Riscos: revisar saídas geradas por IA; evitar usar IA para decisões sem validação humana.
+
+Exercício: usar um prompt básico para gerar 10 casos de teste a partir de uma história curta.
 ```markdown
 # IA como Auxiliar de Testes (Pleno)
 

@@ -1,3 +1,13 @@
+# 03 — Segurança & LGPD
+
+Objetivo: garantir que práticas de teste respeitem privacidade e segurança.
+
+- LGPD: mascaramento/anonimização de dados de produção em fixtures
+- Segurança: testes de penetração, análise de dependências, scanning SAST/DAST
+- Processos: gerenciamento de secrets, acesso mínimo a dados sensíveis
+- Compliance: documentação e trilha de auditoria para testes que usam dados reais
+
+Exercício: criar checklist de requisitos de LGPD para um pipeline de testes que use dados de produção.
 ```markdown
 # Segurança e LGPD (Sênior)
 

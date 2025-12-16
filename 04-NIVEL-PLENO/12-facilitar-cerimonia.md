@@ -1,3 +1,12 @@
+# 12 — Facilitar Cerimônias Ágeis
+
+Objetivo: dar ferramentas para facilitar planning, daily, review e retro.
+
+- Preparação: agenda clara, objetivos, tempo por tópico
+- Técnicas: lean coffee, timers, ancoragem de tópicos
+- Resultados esperados: decisões claras e ações atribuídas
+
+Atividade: conduzir retro com técnica 'Start/Stop/Continue'.
 ```markdown
 # Facilitar Cerimônias (Pleno)
 
