@@ -10,4 +10,10 @@
 - [exemplos/README.md](exemplos/README.md)
 - [docs/README.md](docs/README.md)
 
+**Modelos e Exemplos**
+
+- **Modelos:** [modelos/postman.md](modelos/postman.md), [modelos/jmeter.md](modelos/jmeter.md)
+- **Exemplos Postman:** [exemplos/postman/collection-example.json](exemplos/postman/collection-example.json), [exemplos/postman/env-example.json](exemplos/postman/env-example.json)
+- **Exemplos JMeter:** [exemplos/jmeter/plan.jmx](exemplos/jmeter/plan.jmx)
+
 Arquivos originais por nível permanecem em suas pastas para referência e granularidade.
