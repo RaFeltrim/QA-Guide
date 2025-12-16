@@ -147,4 +147,38 @@ Critério de aceitação: workflows executam e a soma do tempo dos jobs unitári
 
 Explicação da pirâmide aplicada ao pipeline: quando rodar testes rápidos vs lentos e como otimizar o tempo de CI.
 
-> TODO: incluir exemplos de configuração de jobs e matrix.
+
+Exemplo de job com matrix (GitHub Actions)
+
+```yaml
+name: CI
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14,16]
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install
+        run: npm ci
+      - name: Run tests
+        run: npm test --silent
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run linter
+        run: npm run lint || true
+```
+
+Use matrices para executar combinações relevantes (versões, browsers, tipos de teste). Armazene artifacts de cobertura e logs para análise.
+

@@ -32,4 +32,24 @@ Checklist
 
 Como estruturar governança para múltiplas squads, indicadores e rituais de qualidade.
 
-> TODO: adicionar exemplos de políticas e templates de governança.
+
+Exemplos de políticas e templates de governança
+
+Policy: Acesso a dados de teste
+- Objetivo: garantir mínimo privilégio e rastreabilidade
+- Regras:
+	- Acesso a dados sensíveis concedido por pedido formal e expira automaticamente.
+	- Todos os acessos registrados com justificativa.
+
+Template de política de deploy (resumo)
+- Objetivo: padronizar deploys em ambientes críticos
+- Requisitos:
+	- PR aprovado por pelo menos 1 reviewer e 1 QA
+	- Pipeline unit+integration passing
+	- Smoke tests em staging OK
+	- Rollback plan documentado
+
+Rituais de governança
+- Comitê trimestral de qualidade (revisões de políticas, incidentes and action items)
+- Revisões mensais de compliance de pipelines
+

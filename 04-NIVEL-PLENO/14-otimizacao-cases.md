@@ -33,4 +33,32 @@ Checklist
 
 Estratégias para reduzir duplicidade, parametrizar casos e melhorar performance das suites.
 
-> TODO: exemplos práticos e scripts de análise de cobertura.
+
+Exemplos práticos e scripts de análise de cobertura
+
+Usar `pytest-cov` para gerar relatório de cobertura e ferramentas como `coverage.py` para análise.
+
+Comando básico:
+
+```
+pytest --cov=src --cov-report=xml
+```
+
+Script simples para comparar cobertura entre runs (exemplo):
+
+```python
+from xml.etree import ElementTree as ET
+
+def read_coverage(xml_path):
+	tree = ET.parse(xml_path)
+	root = tree.getroot()
+	metrics = root.find('packages').attrib if root.find('packages') is not None else {}
+	return metrics
+
+print('Use cobertura XML para gerar métricas e comparar entre commits')
+```
+
+Práticas:
+- Defina thresholds por pacote e falhe o CI se abaixo do limiar
+- Foco em cobertura crítica, não porcentagem global apenas
+

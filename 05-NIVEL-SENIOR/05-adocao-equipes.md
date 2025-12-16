@@ -35,4 +35,29 @@ Checklist
 
 Roadmap de adoção de práticas de QA em múltiplas squads e métricas de acompanhamento.
 
-> TODO: criar checklist de implantação e milestones.
+
+Checklist de implantação e milestones (exemplo)
+
+Fase 0 — Preparação (semana 0)
+- Definir squad piloto e objetivo do piloto
+- Mapear ferramentas e responsáveis
+
+Fase 1 — Piloto (semanas 1-3)
+- Implementar pipelines básicos e smoke tests
+- Treinar team champion e criar runbook
+- Métricas: tempo de feedback do CI, número de testes automatizados
+
+Fase 2 — Expansão (semanas 4-8)
+- Replicar o pilot para 2 squads adicionais em ondas
+- Estabelecer catálogo de pipelines e templates
+
+Fase 3 — Estabilização (semanas 9-12)
+- Integrar métricas em dashboards e revisar SLAs
+- Planejar próximo ciclo de melhorias
+
+Checklist rápido antes de roll-out
+- [ ] Runbooks e playbooks prontos
+- [ ] Ambientes e secrets configurados
+- [ ] Métricas e dashboards criados
+- [ ] Treinamento realizado com champions
+

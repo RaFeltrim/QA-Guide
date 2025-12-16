@@ -1,3 +1,23 @@
+# Template: Caso de Teste
+
+- ID: <PROJ-001-TC-0001>
+- Título: <Resumo do caso>
+- Objetivo: <o que o caso valida>
+- Pré-condições: <estado do sistema>
+- Passos:
+  1. <passo 1>
+  2. <passo 2>
+  3. ...
+- Resultado Esperado: <descrição>
+- Resultado Obtido: <preencher após execução>
+- Severidade: <Bloqueador/Critico/Médio/Baixo>
+- Responsável: <nome>
+- Tags: <smoke, regression, login>
+
+## Notas
+
+- Evidências: link para logs/screenshots
+- Observações e follow-ups
 # Template: Test Case
 
 - **ID:** TC-0001

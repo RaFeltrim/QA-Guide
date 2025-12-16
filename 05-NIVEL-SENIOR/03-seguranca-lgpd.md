@@ -33,4 +33,47 @@ Checklist
 
 Práticas para garantir conformidade em testes: mascaramento, consentimento e logs minimizados.
 
-> TODO: incluir políticas e exemplos de anonimização de massa.
+
+Políticas e exemplos de anonimização de massa
+
+Política resumida
+- Nunca executar testes automatizados contra dados de produção sem aprovação formal.
+- Quando for necessário usar dados reais para reproduzir um problema, aplicar processo de autorização, mascaramento e auditoria (registro de quem acessou, por que e por quanto tempo).
+- Preferir dados sintetizados ou gerados a partir de modelos para testes de rotina.
+
+Exemplo de pipeline para anonimização (alto nível)
+1. Exportar subset autorizado e versionado (somente campos necessários).
+2. Aplicar transformação determinística para campos identificáveis (hashs com salt por ambiente) e aleatória para campos sensíveis (nomes, telefones) usando biblioteca confiável.
+3. Validar integridade relacional (FKs) e dados obrigatórios.
+4. Importar para ambiente de teste isolado.
+5. Registrar a operação em log de auditoria e remover export temporário da storage.
+
+Script de anonimização (exemplo em Python, simplificado)
+
+```python
+# scripts/anonymize_bulk.py (exemplo)
+import csv
+from hashlib import sha256
+from faker import Faker
+
+fake = Faker('pt_BR')
+
+def anonymize_row(row):
+	row['email'] = sha256((row['email']+'|SALT').encode()).hexdigest() + '@anonym.local'
+	row['name'] = fake.name()
+	row['phone'] = fake.phone_number()
+	return row
+
+with open('export.csv', newline='', encoding='utf8') as inp, open('export_anonym.csv','w',newline='',encoding='utf8') as out:
+	reader = csv.DictReader(inp)
+	writer = csv.DictWriter(out, fieldnames=reader.fieldnames)
+	writer.writeheader()
+	for r in reader:
+		writer.writerow(anonymize_row(r))
+```
+
+Boas práticas
+- Use salts distintos por ambiente e mantenha-os em vault com acesso restrito.
+- Automatize validações de integridade e execute testes de sanity após import.
+- Mantenha retenção curta dos arquivos exportados e garanta logs de auditoria.
+

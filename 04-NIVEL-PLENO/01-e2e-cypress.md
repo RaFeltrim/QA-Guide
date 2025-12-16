@@ -156,4 +156,27 @@ Referências internas: `03-NIVEL-JUNIOR/05-ci-github-actions.md`, `gabarito/temp
 
 Padrões: Page Object Model, fixtures, testes confiáveis e desacoplados.
 
-> TODO: adicionar exemplos avançados e padrões de retry.
+
+Exemplos avançados e padrões de retry
+
+- Estratégia: minimizar retries em testes unitários; usar retries controlados em E2E apenas para flakiness conhecido (ex.: tempo de carregamento intermitente).
+
+Exemplo de configuração de retry no Cypress (`cypress.config.js`):
+
+```js
+module.exports = {
+  e2e: {
+    setupNodeEvents(on, config) {},
+    retries: {
+      runMode: 2,
+      openMode: 0
+    }
+  }
+}
+```
+
+Padrões recomendados:
+- Identificar flaky tests e corrigir estabilidade antes de aumentar retries
+- Registrar retry counts e marcar como flakey se > threshold
+- Separar smoke tests (sem retry) e suites longas (com retry controlado)
+

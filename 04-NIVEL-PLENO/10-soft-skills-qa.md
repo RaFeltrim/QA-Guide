@@ -11,4 +11,16 @@ Atividades práticas: simulações de alinhamento com produto e role-play de inc
 
 Negociação, organização, pensamento crítico e apresentação de riscos.
 
-> TODO: exercícios de role-play e roteiro de comunicação.
+
+Exercícios de role-play e roteiro
+
+1) Simulação de incident response (role-play):
+- Papéis: QA, Dev, PO
+- Cenário: falha crítica em produção
+- Entregável: lista de ações, responsável por rollback e comunicação
+
+2) Apresentação técnica curta:
+- Objetivo: explicar um bug complexo para stakeholders não técnicos
+- Duração: 5 minutos
+- Critérios: clareza, impacto, próximos passos
+

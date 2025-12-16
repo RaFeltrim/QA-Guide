@@ -37,4 +37,17 @@ Checklist
 
 Como facilitar refinement, planning e retros com foco em qualidade.
 
-> TODO: roteiro e templates de facilitação.
+
+Roteiro e templates de facilitação
+
+Template de agenda (workshop 60 minutos):
+- 10 min: Abertura e objetivo
+- 20 min: Discussão e coleta de problemas
+- 20 min: Priorização e definição de ações
+- 10 min: Encerramento e próximos passos
+
+Checklist do facilitador:
+- Preparar materiais e quadro (Miro/whiteboard)
+- Convidar participantes-chave
+- Definir regras básicas (timebox, foco)
+

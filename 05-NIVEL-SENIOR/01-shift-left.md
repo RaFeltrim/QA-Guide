@@ -95,4 +95,27 @@ Referências: `03-NIVEL-JUNIOR/05-ci-github-actions.md`, `04-NIVEL-PLENO/03-pipe
 
 Visão estratégica de adoção Shift Left, roadmap e métricas de sucesso.
 
-> TODO: desenvolver plano de 6 meses e KPIs.
+
+Plano de 6 meses (exemplo detalhado)
+
+- Mês 0 (preparação): diagnóstico, definir KPIs, priorizar áreas críticas
+- Mês 1: implantar gates de unit tests em PRs; criar runbooks de deploy
+- Mês 2: automação de integração e testes de contrato; criar kit de fixtures sintéticas
+- Mês 3: estabelecer pipelines agendados de E2E para áreas críticas; monitoramento inicial de regressões
+- Mês 4: integrar testes de performance agendados; revisar SLAs de MTTR
+- Mês 5: treinamento avançado para squads; playbooks de incident response
+- Mês 6: maturação e revisão de KPIs; plano de continuidade
+
+KPIs sugeridos (metas exemplo para 6 meses):
+
+- MTTD: reduzir 50% em 6 meses
+- MTTR (crítico): < 48h
+- % de PRs com testes unitários executando no CI: 100%
+- Cobertura crítica (módulos core): >= 80%
+- Taxa de regressão por release: < 1%
+
+Como acompanhar:
+
+- Dashboards com séries temporais (trend) e alertas quando thresholds ultrapassados
+- Reuniões quinzenais de revisão de métricas com stakeholders
+

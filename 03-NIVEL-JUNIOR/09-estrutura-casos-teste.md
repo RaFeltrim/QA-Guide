@@ -73,4 +73,21 @@ Referências: template de caso de teste — [gabarito/templates/test-case.md](ga
 
 Formato padrão: ID, título, pré-requisitos, passos, resultado esperado, severidade, evidências.
 
-> TODO: adicionar template reutilizável em `gabarito/templates`.
+
+Template reutilizável
+
+Use o template central em [gabarito/templates/test-case.md](gabarito/templates/test-case.md#L1) para padronizar os casos.
+
+Exemplo de uso rápido:
+
+- ID: QA-002-TC-0005
+- Título: Recuperação de senha - e2e
+- Pré-condições: Conta de teste com email confirmado
+- Passos:
+  1. Acessar `/forgot-password`
+  2. Informar email da conta de teste
+  3. Seguir link do email simulado
+- Resultado Esperado: Usuário consegue redefinir senha e autenticar
+
+Armazene os casos em `tests/cases/` ou em uma planilha compartilhada, referenciando o ID do caso no relatório de bugs.
+

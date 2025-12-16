@@ -119,4 +119,39 @@ Na prática, documente os scripts e explique o porquê de cada `WHERE`. Em reuni
 
 Introdução a SQL CRUD para preparar massa de testes e validar dados. Exemplos de `SELECT`, `UPDATE`, `DELETE` e uso de transações.
 
-> TODO: expandir com scripts e exemplos comentados conforme Insight 1.
+
+Scripts e exemplos (seed / rollback)
+
+Exemplo SQL de seed (arquivo `fixtures/seed_test_data.sql`):
+
+```sql
+INSERT INTO users (id, email, name) VALUES
+  (1, 'qa.teste@example.com', 'Usuario Teste');
+```
+
+Rollback simples (exemplo):
+
+```sql
+DELETE FROM users WHERE email LIKE '%@example.com';
+```
+
+Script Python de seed (exemplo):
+
+```python
+# scripts/db_seed.py
+import argparse
+import sqlite3
+
+def seed(db='test.db'):
+    conn = sqlite3.connect(db)
+    cur = conn.cursor()
+    cur.execute("INSERT INTO users(id,email,name) VALUES (1,'qa.teste@example.com','Usuario Teste')")
+    conn.commit()
+    conn.close()
+
+if __name__ == '__main__':
+    seed()
+```
+
+Coloque scripts em `scripts/` e documente o uso em `02-NIVEL-ESTAGIARIO/03-ambiente-teste.md`.
+

@@ -121,4 +121,30 @@ Referências: documentação oficial `k6` — https://k6.io/docs/, integração 
 
 Introdução a scripts k6, métricas P95/P99, e análise de resultados.
 
-> TODO: incluir script exemplo e interpretação de resultados.
+
+Script exemplo (k6) e interpretação básica
+
+Exemplo `k6` simples (`k6-script.js`):
+
+```js
+import http from 'k6/http';
+import { sleep } from 'k6';
+
+export let options = {
+	vus: 10,
+	duration: '30s'
+};
+
+export default function () {
+	http.get('https://test-app.local/');
+	sleep(1);
+}
+```
+
+Interpretação de resultados:
+- `vus` e `duration` mostram carga aplicada; aumentar até encontrar degradação.
+- VT: Latência média e p95 são métricas-chave; se p95 sobe muito, investigar backend/DB.
+- Erros non-2xx indicam problemas funcionais sob carga.
+
+Inclua execução no CI como job agendado (nightly) e armazene resultados como artifacts para análise.
+

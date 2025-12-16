@@ -40,4 +40,17 @@ Checklist
 
 Como usar IA para gerar cenários, analisar logs e acelerar criação de casos de teste.
 
-> TODO: incluir exemplos de prompts e limites práticos.
+
+Exemplos de prompts e limites práticos
+
+Prompt exemplo para gerar casos de teste a partir de requisitos:
+
+```
+Input: "Como testar o fluxo de recuperação de senha de um usuário"
+Output: Forneça 8 casos de teste, cobrindo sucessos, falhas, inputs inválidos e cenários de segurança.
+```
+
+Limites e boas práticas:
+- Sempre revisar automaticamente gerado por humanos; evite usar sem validação.
+- Evite expor dados sensíveis nos prompts; use exemplos sintetizados.
+

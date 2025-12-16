@@ -69,4 +69,19 @@ Referências internas: `03-NIVEL-JUNIOR/07-agile-scrum-qa.md` (cerimônias) e te
 
 Comunicação clara, documentação e como transformar problemas técnicos em impacto de negócio.
 
-> TODO: exercícios práticos de comunicação.
+
+Exercícios práticos (comunicação)
+
+1) Bug Report — exercício escrito
+- Objetivo: escrever um bug report claro e acionável
+- Entrada: forneça um bug simples (reprodução mínima)
+- Entrega: bug report com título, passos, resultado esperado, evidências e impacto
+
+2) Role-play: Priorizar Incidentes
+- Objetivo: simular triagem entre PO, dev e QA
+- Roteiro: o time recebe 3 incidentes; discutir prioridades e justificar as decisões
+
+3) Apresentação de resultados (3 minutos)
+- Objetivo: comunicar um resumo de testes para stakeholders
+- Entregável: slide curto com métricas-chave, riscos e próxima ação
+

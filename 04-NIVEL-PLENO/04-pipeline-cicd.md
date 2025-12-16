@@ -92,4 +92,37 @@ Referências: `03-NIVEL-JUNIOR/08-estrategia-funneling.md`, `04-NIVEL-PLENO/02-p
 
 Como compor stages: unit → integration → e2e → perf e publicar artifacts.
 
-> TODO: incluir exemplos de GitHub Actions com matrix e artifacts.
+
+Exemplo de GitHub Actions com matrix e artifacts
+
+```yaml
+name: CI
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.10, 3.11]
+        os: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: python -m pip install -r requirements.txt
+      - name: Run tests
+        run: python -m pytest -q
+      - name: Upload coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
+```
+
+Armazene artifacts críticos (logs, coverage, results) para investigação de falhas em PRs.
+

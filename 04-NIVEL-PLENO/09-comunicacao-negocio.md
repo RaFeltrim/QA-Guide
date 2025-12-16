@@ -43,4 +43,25 @@ Links relacionados:
 
 Como traduzir problemas técnicos em impacto de negócio e priorizar testes com base em risco.
 
-> TODO: incluir exemplos de comunicações e templates.
+
+Exemplos de comunicações e templates
+
+Template de resumo para stakeholders (1 slide):
+- Objetivo da entrega
+- Situação atual (OK / risco / bloqueado)
+- Métricas-chave (test coverage, regressões, erros críticos)
+- Próximos passos e responsáveis
+
+Email curto para notificar release:
+
+```
+Assunto: Release <tag> - status e observações
+
+Resumo: Deploy planejado para <data>. Testes smoke OK em staging.
+Riscos: <lista>
+Ação: rollback plan disponível em <link>
+
+Atenciosamente,
+Equipe QA
+```
+

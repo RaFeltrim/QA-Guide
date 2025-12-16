@@ -15,4 +15,17 @@ Exemplo: `tests/` chama `helpers/` e `fixtures/`; `src/` tem adaptadores para AP
 
 Como estruturar suites, fixtures e helpers para manter testes legíveis e rápidos.
 
-> TODO: adicionar exemplos e anti-patterns.
+
+Exemplos e anti-patterns
+
+Boas práticas:
+- Aplicar testes em camadas: unit -> integration -> contract -> e2e
+- Projetar serviços pequenos e testáveis (interfaces claras, pontos de injeção de dependências)
+
+Anti-patterns comuns:
+- Testar internals em vez de comportamento (fragiliza testes)
+- Bases de testes acopladas a dados reais sem isolamento (dificulta rollback)
+- Testes e2e enormes que cobrem toda a jornada com muitos pontos de falha (dividir em smoke + componentes)
+
+Exemplo rápido: usar testes de contrato (PACT ou similares) para validar integração entre serviços sem precisar do serviço real durante desenvolvimento.
+

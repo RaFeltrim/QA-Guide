@@ -33,4 +33,21 @@ Checklist
 
 Competências de liderança, mentoria estratégica e desenvolvimento de cultura de qualidade.
 
-> TODO: incluir roteiro de coaching e exemplos de impacto.
+
+Roteiro de coaching e exemplos de impacto
+
+Roteiro de sessão de coaching (45-60 min)
+- 5 min: abertura e objetivo da sessão
+- 15 min: análise de situação atual (ex.: comportamento em PRs, qualidade de testes)
+- 15 min: exercício prático / estudo de caso (pairing ou revisão de PR)
+- 10 min: compromissos (ações concretas) e follow-up
+
+Exemplo de exercício de coaching (impacto mensurável)
+- Objetivo: reduzir flaky tests em 30% em 6 semanas
+- Atividades: análise de flaky tests, refatoração de waits/delays, criação de asserts mais robustos
+- Métrica de impacto: número de falhas intermitentes por pipeline antes/depois
+
+Como mensurar impacto
+- Defina baseline (falhas por semana)
+- Acompanhe mudanças semanais e correlacione com mudanças de código/infra
+

@@ -43,4 +43,44 @@ Checklist
 
 Índices, relações, transações e estratégias para validar integridade em testes.
 
-> TODO: adicionar exemplos de queries e scripts de preparação/rollback.
+
+Exemplos de queries e scripts de preparação/rollback
+
+Query exemplo: inserir dados de teste e verificar integridade
+
+```sql
+-- fixtures/seed_test_data.sql
+INSERT INTO users (id, email, name) VALUES (100, 'qa.seed@example.com', 'QA Seed');
+```
+
+Rollback exemplo:
+
+```sql
+DELETE FROM users WHERE email LIKE '%@example.com';
+```
+
+Script de preparação/rollback em Python (exemplo):
+
+```python
+import sqlite3
+
+def prepare(db='test.db'):
+	conn = sqlite3.connect(db)
+	cur = conn.cursor()
+	cur.execute("INSERT INTO users(id,email,name) VALUES (100,'qa.seed@example.com','QA Seed')")
+	conn.commit()
+	conn.close()
+
+def rollback(db='test.db'):
+	conn = sqlite3.connect(db)
+	cur = conn.cursor()
+	cur.execute("DELETE FROM users WHERE email LIKE '%@example.com'")
+	conn.commit()
+	conn.close()
+
+if __name__ == '__main__':
+	prepare()
+```
+
+Documente o uso desses scripts e garanta que sejam idempotentes quando possível.
+

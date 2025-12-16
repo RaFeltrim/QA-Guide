@@ -89,4 +89,16 @@ Explique nos PRs a limitação do validador (ex.: apenas validação sintática,
 
 Contexto: implementar e testar um validador de CNPJ (apenas a lógica, sem dependências externas).
 
-> TODO: criar exercício com critérios e adicionar gabarito em `gabarito/exemplos-codigo/validador-cnpj.py`.
+
+Exercício (prático) — Validador de CNPJ
+
+- Descrição: implemente a função `is_valid_cnpj(cnpj: str) -> bool` seguindo o algoritmo descrito.
+- Critérios de aceitação:
+	- Lidar com entradas com e sem máscara
+	- Rejeitar sequências repetidas (ex.: '00000000000000')
+	- Cobrir casos de dígitos verificadores corretos e incorretos
+	- Testes automatizados com `pytest` (arquivo `tests/test_validador.py`)
+	- CLI opcional que retorna `OK` para válido e `NOK` para inválido
+
+Gabarito e referência: veja `gabarito/exemplos-codigo/validador-cnpj.py` e `gabarito/exemplos-codigo/tests/test_validador_pytest.py`.
+

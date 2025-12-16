@@ -11,4 +11,18 @@ Exercício: preparar uma sessão de pair testing com um junior e documentar apre
 
 Dicas para mentorizar juniores: revisão de código, pair testing, feedback contínuo.
 
-> TODO: adicionar roteiro de 1:1 e tópicos de desenvolvimento.
+
+Roteiro de 1:1 e tópicos de desenvolvimento
+
+Modelo rápido para 1:1 (30 minutos):
+
+- 5 min: Check-in pessoal
+- 10 min: Revisão de progresso / bloqueios técnicos
+- 10 min: Desenvolvimento de carreira (objetivos, feedback)
+- 5 min: Próximos passos e ações
+
+Tópicos recorrentes:
+- Habilidades técnicas a desenvolver (ex.: automação, performance)
+- Soft skills (comunicação, negociação)
+- Roteiro de aprendizagem e micro-tarefas para a próxima semana
+

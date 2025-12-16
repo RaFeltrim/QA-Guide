@@ -2,7 +2,34 @@
 
 Fluxo recomendado: branches `feat/`, `fix/`, pull requests com descrição, reviewers, e checklist de QA.
 
-> TODO: adicionar templates de PR e exemplos de mensagens.
+
+Templates e boas práticas (PRs e commits)
+
+Exemplo de template de PR (curto):
+
+```
+Título: [FEAT|FIX|DOC] <breve descrição>
+
+Descrição:
+- Contexto breve do problema/feature
+- O que foi alterado
+- Como testar (passos rápidos)
+
+Checklist:
+- [ ] Testes unitários adicionados/atualizados
+- [ ] Documentação atualizada
+- [ ] Revisão de segurança/privacidade (se aplicável)
+```
+
+Exemplo de mensagem de commit (convenção simples):
+
+- `feat(auth): adicionar validação de tokens` 
+- `fix(login): corrigir condição de borda em senha`
+
+Dicas:
+- Abra PRs pequenos e focados (máx 200 linhas de mudança quando possível).
+- Inclua instruções claras de como validar localmente e com dados de teste.
+
 ## Padrões e templates
 
 - Branch names: `feat/<area>-<descricao>`, `fix/<area>-<descricao>`, `chore/<descricao>`
