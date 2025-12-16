@@ -12,9 +12,8 @@
 
 **Modelos e Exemplos**
 
-- **Modelos:** [modelos/postman.md](modelos/postman.md), [modelos/jmeter.md](modelos/jmeter.md)
-- **Exemplos Postman:** [exemplos/postman/collection-example.json](exemplos/postman/collection-example.json), [exemplos/postman/env-example.json](exemplos/postman/env-example.json)
-- **Exemplos JMeter:** [exemplos/jmeter/plan.jmx](exemplos/jmeter/plan.jmx)
+-- **Modelos:** [modelos/jmeter.md](modelos/jmeter.md)
+-- **Exemplos JMeter:** [exemplos/jmeter/plan.jmx](exemplos/jmeter/plan.jmx)
 
 - **Exemplos Zephyr:** [exemplos/zephyr/README.md](exemplos/zephyr/README.md)
 
