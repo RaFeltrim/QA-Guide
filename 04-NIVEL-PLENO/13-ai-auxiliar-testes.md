@@ -7,6 +7,36 @@ Aplicações práticas:
 
 Riscos: revisar saídas geradas por IA; evitar usar IA para decisões sem validação humana.
 
+## Uso recomendado
+
+- Gerar esboços de casos de teste a partir de requisitos.
+- Sugerir cenários de borda e hipóteses de falha.
+- Apoiar na geração de dados de teste sintéticos (cautela com dados sensíveis).
+
+## Limitações e segurança
+
+- Validar outputs da IA manualmente; IA pode gerar falsos positivos.
+- Não enviar dados sensíveis para serviços externos sem anonimização.
+
+## Exemplo de prompt
+
+Input: "Como testar o fluxo de recuperação de senha de um usuário"
+
+Output: Forneça 8 casos de teste, cobrindo sucessos, falhas, inputs inválidos e cenários de segurança.
+
+## Checklist
+
+- [ ] Output validado por humano
+- [ ] Dados sensíveis protegidos
+# 13 — IA como Auxílio para Testes
+
+Aplicações práticas:
+- Geração de casos de teste a partir de requisitos
+- Análise de logs para identificar padrões de erro
+- Geração de dados de teste e prompts para prompt engineering
+
+Riscos: revisar saídas geradas por IA; evitar usar IA para decisões sem validação humana.
+
 Exercício: usar um prompt básico para gerar 10 casos de teste a partir de uma história curta.
 ```markdown
 # IA como Auxiliar de Testes (Pleno)

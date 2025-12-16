@@ -1,53 +1,35 @@
 # 12 — Facilitar Cerimônias Ágeis
 
-Objetivo: dar ferramentas para facilitar planning, daily, review e retro.
+Objetivo: fornecer ferramentas e templates para facilitar planning, daily, review e retro com foco em qualidade.
 
-- Preparação: agenda clara, objetivos, tempo por tópico
-- Técnicas: lean coffee, timers, ancoragem de tópicos
-- Resultados esperados: decisões claras e ações atribuídas
+## Antes da cerimônia
 
-Atividade: conduzir retro com técnica 'Start/Stop/Continue'.
-```markdown
-# Facilitar Cerimônias (Pleno)
+- Prepare agenda com objetivos claros e evidências (bugs, métricas, riscos).
+- Convide participantes-chave e defina o tempo por tópico.
 
-Objetivo: orientar QAs plenos a facilitar reuniões técnicas e cerimônias ágeis com foco em qualidade.
+## Durante a cerimônia
 
-1. Antes da cerimônia
+- Atue como guardião do tempo e dos critérios de aceite.
+- Use técnicas como Lean Coffee e timeboxes para manter foco.
 
-- Prepare agenda clara com objetivos de qualidade.
-- Traga evidências (bugs, métricas, riscos) para embasar decisões.
+## Pós-cerimônia
 
-2. Durante a cerimônia
+- Registre decisões, responsáveis e prazos para ações relacionadas à qualidade.
 
-- Atue como guardião do tempo e foco em critérios de aceite.
-- Traduza requisitos ambíguos em critérios de teste observáveis.
+## Template de agenda (workshop 60 minutos)
 
-3. Pós-cerimônia
-
-- Registre decisões e responsável por ações relacionadas à qualidade.
-
-Checklist
-
-- [ ] Agenda preparada
-- [ ] Critérios de aceite documentados
-- [ ] Riscos e mitigação listados
-
-```
-# Facilitar Cerimônias (Pleno)
-
-Como facilitar refinement, planning e retros com foco em qualidade.
-
-
-Roteiro e templates de facilitação
-
-Template de agenda (workshop 60 minutos):
 - 10 min: Abertura e objetivo
 - 20 min: Discussão e coleta de problemas
 - 20 min: Priorização e definição de ações
 - 10 min: Encerramento e próximos passos
 
 Checklist do facilitador:
+
 - Preparar materiais e quadro (Miro/whiteboard)
 - Convidar participantes-chave
 - Definir regras básicas (timebox, foco)
 
+Atividade sugerida: conduzir retro com técnica 'Start/Stop/Continue'.
+- Convidar participantes-chave
+
+- Definir regras básicas (timebox, foco)

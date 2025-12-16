@@ -7,6 +7,40 @@ Objetivo: escalar práticas de QA mantendo agilidade e qualidade.
 - Métricas de governança: compliance de pipelines, tempo de entrega, qualidade por squad
 - Riscos: burocracia vs autonomia — balancear via indicadores
 
+## Componentes
+
+- Comitê de qualidade (revisões trimestrais)
+- Policies de deploy e checklist de segurança
+
+## Template: Policy de Acesso a Dados de Teste (resumo)
+
+- Objetivo: garantir mínimo privilégio e rastreabilidade
+- Regras:
+  - Acesso a dados sensíveis concedido por pedido formal e expira automaticamente.
+  - Todos os acessos registrados com justificativa.
+
+## Template de política de deploy (resumo)
+
+- Objetivo: padronizar deploys em ambientes críticos
+- Requisitos:
+  - PR aprovado por pelo menos 1 reviewer e 1 QA
+  - Pipeline unit+integration passing
+  - Smoke tests em staging OK
+  - Rollback plan documentado
+
+## Rituais de governança
+
+- Comitê trimestral de qualidade (revisões de políticas, incidentes e action items)
+- Revisões mensais de compliance de pipelines
+# 07 — Governança Agile para QA
+
+Objetivo: escalar práticas de QA mantendo agilidade e qualidade.
+
+- Modelos: guilds, chapters e centros de excelência
+- Processos: definição de padrões, templates e políticas de qualidade
+- Métricas de governança: compliance de pipelines, tempo de entrega, qualidade por squad
+- Riscos: burocracia vs autonomia — balancear via indicadores
+
 Exercício: desenhar a estrutura organizacional mínima para suportar 10 squads.
 ```markdown
 # Governança Agile (Sênior)

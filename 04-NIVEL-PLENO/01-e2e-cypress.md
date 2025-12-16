@@ -21,6 +21,119 @@ describe('Login', () => {
 })
 ```
 
+## Boas práticas (resumo)
+- usar fixtures, comandos customizados (`Cypress.Commands.add`), e ambientes isolados.
+- Use `cy.intercept()` para stubs/fakes quando possível; reserve E2E completas para fluxos críticos.
+- Testes pequenos e determinísticos por spec; evitar dependência entre testes.
+
+## Redução de flakiness
+- Preferir assertions com timeout em vez de sleeps.
+- Capture screenshots e vídeos no CI para debugar falhas intermitentes.
+
+## Exemplos rápidos
+
+```js
+// cypress/e2e/cadastro_cnpj.spec.js
+describe('Cadastro com CNPJ', () => {
+  beforeEach(() => cy.visit('/cadastro'))
+  it('@smoke valida campo cnpj', () => {
+    cy.get('#cnpj').type('11.222.333/0001-81')
+    cy.get('#submit').click()
+    cy.contains('Cadastro realizado').should('exist')
+  })
+})
+```
+
+## Integração CI
+- Run rápido: `--env grepTags=@smoke` para smoke tests em PRs.
+- Full run em release pipeline com retry limitado para testes flakey conhecidos.
+
+## Configuração mínima (instalação)
+
+```bash
+npm init -y
+npm install cypress --save-dev
+```
+
+## Estrutura sugerida
+
+- `cypress/fixtures/` — dados reutilizáveis
+- `cypress/integration/` — spec files (fluxos E2E)
+- `cypress/support/` — comandos customizados e hooks
+
+## Exemplo básico de spec
+
+```js
+describe('Fluxo de login', () => {
+  it('faz login com credenciais válidas', () => {
+    cy.visit('/login')
+    cy.get('[data-cy=email]').type('ana.qa+teste@example.com')
+    cy.get('[data-cy=password]').type('SenhaForte123!')
+    cy.get('[data-cy=submit]').click()
+    cy.url().should('include', '/dashboard')
+    cy.get('[data-cy=welcome]').should('contain', 'Bem-vinda')
+  })
+})
+```
+
+## Boas práticas Pleno
+- Use `data-cy` para selecionar elementos com estabilidade.
+- Evite flakiness: espere por elementos ou use intercepts (`cy.intercept`) para controlar dependências externas.
+- Isolar testes: limpar estado entre testes (`cy.request('POST', '/testing/reset')`) ou usar snapshots controlados.
+- Parallelização: configure CI com divisão de specs por arquivo e caching de navegador.
+
+## Exemplo de retry config
+
+```js
+module.exports = {
+  e2e: {
+    setupNodeEvents(on, config) {},
+    retries: {
+      runMode: 2,
+      openMode: 0
+    }
+  }
+}
+```
+
+## Exercício prático (nível Pleno)
+
+- Objetivo: criar um conjunto de 3 specs E2E para o fluxo de compra (adicionar ao carrinho, checkout, histórico de pedidos).
+- Entregáveis:
+  - `cypress/integration/cart.spec.js`
+  - `cypress/integration/checkout.spec.js`
+  - `cypress/integration/orders.spec.js`
+  - README curto com comandos para executar localmente (`npm run e2e`) e variáveis de ambiente necessárias.
+
+Critérios de aceitação:
+- Specs executam localmente com `npm run e2e` em menos de 3 minutos (cada) em ambiente de teste.
+- Uso de `cy.intercept` para stubs de serviços externos quando aplicável.
+- Testes idempotentes e limpos (podem rodar várias vezes sem poluir dados).
+
+Referências internas: `03-NIVEL-JUNIOR/08-estrategia-funneling.md`, `gabarito/templates/test-case.md`.
+# 01 — E2E com Cypress
+
+Objetivo: introduzir Cypress para testes end-to-end e padrão Page Object Model (POM).
+
+- Instalação: `npm init -y && npm install cypress --save-dev`
+- Estrutura: `cypress/fixtures`, `cypress/integration`, `cypress/support`
+- POM: criar classes por página, expor ações (ex.: `LoginPage.login(user, pass)`)
+
+Exemplo rápido (pseudo):
+
+```js
+// cypress/integration/login.spec.js
+import LoginPage from '../pages/LoginPage'
+
+describe('Login', () => {
+  it('deve logar com credenciais válidas', () => {
+    LoginPage.visit()
+    LoginPage.login('user','pass')
+    LoginPage.assertLogged()
+  })
+})
+```
+
 Boas práticas: usar fixtures, comandos customizados (`Cypress.Commands.add`), e ambientes isolados.
 ```markdown
 # E2E com Cypress (Pleno)

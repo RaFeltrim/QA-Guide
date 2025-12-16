@@ -17,7 +17,7 @@ Este documento descreve o formato recomendado para casos de teste e mostra exemp
 - Observações/Evidências: anexos, screenshots, logs.
 - Tags/Componentes: para triagem e execução em pipelines.
 
-Use o template de caso de teste em [gabarito/templates/test-case.md](gabarito/templates/test-case.md#L1) para criar novos casos. Abaixo há um exemplo completo preenchido.
+Use o template de caso de teste em [gabarito/templates/test-case.md](../gabarito/templates/test-case.md#L1) para criar novos casos. Abaixo há um exemplo completo preenchido.
 
 ---
 
@@ -57,7 +57,7 @@ Use o template de caso de teste em [gabarito/templates/test-case.md](gabarito/te
 
 ### Como ligar um caso de teste a um gabarito/automação
 
-1. Crie o caso no formato do template em [gabarito/templates/test-case.md](gabarito/templates/test-case.md#L1).
+1. Crie o caso no formato do template em [gabarito/templates/test-case.md](../gabarito/templates/test-case.md#L1).
 2. Adicione dados reutilizáveis em `fixtures/` e referencie-os no campo `Dados de teste`.
 3. Marque o case com tags correspondentes aos pipelines (`smoke`, `ci`, `e2e`).
 4. Para cada caso com automatização planejada, adicione uma referência ao arquivo de teste automatizado (ex: `gabarito/exemplos-codigo/tests/test_validador_pytest.py`).
@@ -68,7 +68,7 @@ Use o template de caso de teste em [gabarito/templates/test-case.md](gabarito/te
 
 ---
 
-Referências: template de caso de teste — [gabarito/templates/test-case.md](gabarito/templates/test-case.md#L1); templates de bug-report — [gabarito/templates/bug-report.md](gabarito/templates/bug-report.md#L1).
+Referências: template de caso de teste — [gabarito/templates/test-case.md](../gabarito/templates/test-case.md#L1); templates de bug-report — [gabarito/templates/bug-report.md](../gabarito/templates/bug-report.md#L1).
 # Estrutura de Casos de Teste (Júnior)
 
 Formato padrão: ID, título, pré-requisitos, passos, resultado esperado, severidade, evidências.
@@ -76,7 +76,7 @@ Formato padrão: ID, título, pré-requisitos, passos, resultado esperado, sever
 
 Template reutilizável
 
-Use o template central em [gabarito/templates/test-case.md](gabarito/templates/test-case.md#L1) para padronizar os casos.
+Use o template central em [gabarito/templates/test-case.md](../gabarito/templates/test-case.md#L1) para padronizar os casos.
 
 Exemplo de uso rápido:
 

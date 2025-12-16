@@ -64,16 +64,16 @@ pytest -q              # executar testes Python
 
 Arquivos-chave criados (caminho relativo)
 
-- [QA-Guide/README.md](QA-Guide/README.md)
-- [QA-Guide/02-NIVEL-ESTAGIARIO/01-testes-manuais.md](QA-Guide/02-NIVEL-ESTAGIARIO/01-testes-manuais.md)
-- [QA-Guide/02-NIVEL-ESTAGIARIO/02-bug-reports.md](QA-Guide/02-NIVEL-ESTAGIARIO/02-bug-reports.md)
-- [QA-Guide/03-NIVEL-JUNIOR/01-python-pytest.md](QA-Guide/03-NIVEL-JUNIOR/01-python-pytest.md)
-- [QA-Guide/03-NIVEL-JUNIOR/03-validador-cnpj.md](QA-Guide/03-NIVEL-JUNIOR/03-validador-cnpj.md)
-- [QA-Guide/gabarito/exemplos-codigo/validador-cnpj.py](QA-Guide/gabarito/exemplos-codigo/validador-cnpj.py)
-- [QA-Guide/04-NIVEL-PLENO/01-e2e-cypress.md](QA-Guide/04-NIVEL-PLENO/01-e2e-cypress.md)
-- [QA-Guide/04-NIVEL-PLENO/02-performance-k6.md](QA-Guide/04-NIVEL-PLENO/02-performance-k6.md)
-- [QA-Guide/04-NIVEL-PLENO/03-pipeline-patterns.md](QA-Guide/04-NIVEL-PLENO/03-pipeline-patterns.md)
-- [QA-Guide/04-NIVEL-PLENO/04-ia-automation-guidelines.md](QA-Guide/04-NIVEL-PLENO/04-ia-automation-guidelines.md)
+- [QA-Guide/README.md](README.md)
+- [QA-Guide/02-NIVEL-ESTAGIARIO/01-testes-manuais.md](02-NIVEL-ESTAGIARIO/01-testes-manuais.md)
+- [QA-Guide/02-NIVEL-ESTAGIARIO/02-bug-reports.md](02-NIVEL-ESTAGIARIO/02-bug-reports.md)
+- [QA-Guide/03-NIVEL-JUNIOR/01-python-pytest.md](03-NIVEL-JUNIOR/01-python-pytest.md)
+- [QA-Guide/03-NIVEL-JUNIOR/03-validador-cnpj.md](03-NIVEL-JUNIOR/03-validador-cnpj.md)
+- [QA-Guide/gabarito/exemplos-codigo/validador-cnpj.py](gabarito/exemplos-codigo/validador-cnpj.py)
+- [QA-Guide/04-NIVEL-PLENO/01-e2e-cypress.md](04-NIVEL-PLENO/01-e2e-cypress.md)
+- [QA-Guide/04-NIVEL-PLENO/02-performance-k6.md](04-NIVEL-PLENO/02-performance-k6.md)
+- [QA-Guide/04-NIVEL-PLENO/03-pipeline-patterns.md](04-NIVEL-PLENO/03-pipeline-patterns.md)
+- [QA-Guide/04-NIVEL-PLENO/04-ia-automation-guidelines.md](04-NIVEL-PLENO/04-ia-automation-guidelines.md)
 
 Próximos passos recomendados
 

@@ -7,6 +7,61 @@ Objetivo: desenhar e implementar estratégias para antecipar qualidade no ciclo 
 - ROI: medir redução de defeitos em produção e tempo de correção
 - Implantação: pilotos por squad, evangelismo técnico, métricas de adoção
 
+## Visão estratégica
+
+- Reduzir custo de correção, aumentar velocidade de entrega e elevar qualidade desde design.
+
+## Roadmap (exemplo 3 meses)
+
+- Mês 1: Diagnóstico, quick-wins (ex.: critérios de aceite claros).
+- Mês 2: Integração CI e automação de testes críticos.
+- Mês 3: Métricas, dashboards e treinamento de times.
+
+## Governança
+
+- Políticas de qualidade, KPIs e revisão trimestral.
+
+## KPIs recomendados (exemplos)
+
+- Tempo médio para detecção de bug (MTTD) — meta: reduzir 50% em 6 meses.
+- Tempo médio de correção (MTTR) — meta: reduzir para < 48h para bugs críticos.
+- % de cobertura de testes críticos (unit + integration) — meta: 80% nas áreas core.
+- Taxa de regressão em produção — meta: < 1% por release.
+- Tempo de feedback do CI (unit+integration) — meta: < 10 minutos.
+
+## LGPD e conformidade
+
+- Garantir anonimização/sintetização de dados de teste.
+- Definir políticas para uso de dados reais em testes (consentimento, justificativa legal, acesso restrito).
+- Auditoria de logs e trilhas de auditoria para testes que usam dados sensíveis.
+
+## Roadmap de adoção (exemplo 3-6 meses)
+
+- Mês 1: diagnóstico (gap analysis), definir KPIs e quick wins (linters, pre-commit, unit gates).
+- Mês 2: implementar gates de unit/integration no CI; treinar times em review de requisitos.
+- Mês 3: adicionar testes de contrato e integração automatizada; criar biblioteca de fixtures sintéticas.
+- Mês 4–6: estabilizar E2E, executar performance em pipelines agendados, medir KPIs e ajustar SLAs.
+
+## Checklist de rollout
+
+- Documentar KPIs e metas.
+- Definir quality gates e automatizar no CI.
+- Criar catálogo de pipelines e responsáveis.
+- Treinar times e documentar processos (runbooks).
+
+## Exercício prático (Sênior)
+
+- Objetivo: criar um plano de adoção Shift-Left para um produto hipotético, incluindo KPIs, riscos e plano de mitigação.
+- Entregável: `05-NIVEL-SENIOR/plan-shift-left.md` com ações por sprint (4 sprints) e responsáveis.
+# 01 — Shift-Left Estratégico
+
+Objetivo: desenhar e implementar estratégias para antecipar qualidade no ciclo de produto.
+
+- Definição: QA envolvido desde discovery até release
+- Práticas: testes em ambientes de design, revisão de requisitos, definição de contratos
+- ROI: medir redução de defeitos em produção e tempo de correção
+- Implantação: pilotos por squad, evangelismo técnico, métricas de adoção
+
 Exercício: desenhar um plano de adoção shift-left para uma feature crítica (cronograma, stakeholders, métricas).
 ```markdown
 # Shift Left Estratégico (Sênior)

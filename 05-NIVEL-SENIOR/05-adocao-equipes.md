@@ -7,36 +7,15 @@ Objetivo: criar um plano replicável para adoção de práticas de QA em múltip
 - Medição: acompanhar adoção via checklists e KPIs de qualidade
 - Sustentabilidade: grooming contínuo do playbook e feedback loops
 
-Exercício: elaborar um plano de rollout (3 squads em 6 semanas) com marcos e métricas.
-```markdown
-# Adoção em Equipes (Sênior)
-
-Estratégias para escalar práticas de qualidade em múltiplas equipes.
-
-1. Modelo de rollout
+## Modelo de rollout
 
 - Piloto com 1 squad → iterar → expandir em ondas.
 
-2. Métricas de adoção
+## Métricas de adoção
 
 - Adoção de pipelines, número de automações por sprint, tempo médio para feedback.
 
-3. Cultura
-
-- Suporte a comunidade interna (guildas), documentação e mentoring.
-
-Checklist
-
-- [ ] Piloto definido
-- [ ] Métricas de adoção instrumentadas
-
-```
-# Adoção em Equipes (Sênior)
-
-Roadmap de adoção de práticas de QA em múltiplas squads e métricas de acompanhamento.
-
-
-Checklist de implantação e milestones (exemplo)
+## Checklist de implantação e milestones (exemplo)
 
 Fase 0 — Preparação (semana 0)
 - Definir squad piloto e objetivo do piloto
@@ -59,5 +38,31 @@ Checklist rápido antes de roll-out
 - [ ] Runbooks e playbooks prontos
 - [ ] Ambientes e secrets configurados
 - [ ] Métricas e dashboards criados
+# Adoção de práticas de QA nas equipes
+
+Objetivo: orientar a adoção gradual e sustentável de práticas de QA em times ágeis.
+
+## Estratégias
+
+- Eleger `QA champions` para evangelizar boas práticas.
+- Capacitação prática com workshops e pair-testing.
+- Medir impacto com KPIs: MTTR, defect escape rate, tempo de feedback do CI.
+
+## Playbook de rollout (exemplo)
+
+1. Preparação (semana 0): definir squad piloto, mapear ferramentas e responsáveis.
+2. Piloto (semanas 1–3): implementar pipelines básicos, smoke tests e runbook; treinar champion.
+3. Expansão (semanas 4–8): replicar para squads adicionais em ondas; padronizar templates.
+4. Estabilização (semanas 9–12): integrar métricas em dashboards e revisar SLAs.
+
+## Checklist rápido
+
+- [ ] Runbooks e playbooks prontos
+- [ ] Ambientes e secrets configurados
+- [ ] Métricas e dashboards criados
 - [ ] Treinamento realizado com champions
 
+Exercício: elabore um plano de rollout para 3 squads em 6 semanas com marcos e métricas.
+
+
+- Suporte a comunidade interna (guildas), documentação e mentoring.

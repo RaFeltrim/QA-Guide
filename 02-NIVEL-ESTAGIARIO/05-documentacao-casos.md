@@ -15,7 +15,7 @@ Inclui exemplo de caso simples ao final.
 
 Formato recomendado para casos de teste (ID, título, passos, resultado esperado, severidade).
 
-Use o template em [gabarito/templates/test-case.md](gabarito/templates/test-case.md#L1).
+Use o template em [gabarito/templates/test-case.md](../gabarito/templates/test-case.md#L1).
 
 Exemplo rápido de caso de teste:
 

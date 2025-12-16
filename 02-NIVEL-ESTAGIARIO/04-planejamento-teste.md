@@ -12,7 +12,7 @@ Modelo simples de plano que pode ser adaptado a sprints.
 
 Estrutura de um plano de teste: escopo, riscos, critérios de saída, estimativa.
 
-Use o template de referência em [gabarito/templates/test-plan.md](gabarito/templates/test-plan.md#L1).
+Use o template de referência em [gabarito/templates/test-plan.md](../gabarito/templates/test-plan.md#L1).
 
 Exemplo rápido de seção "Cronograma / Marcos":
 
