@@ -73,19 +73,22 @@ def create_execution(zephyr_test_id, status, comment=None):
     return True
 
 def main():
-    if len(sys.argv) < 2:
-        print('Usage: bruno-to-zephyr-template.py <report-path> [mapping.json]')
-        sys.exit(1)
-    report = sys.argv[1]
+    import argparse
+    parser = argparse.ArgumentParser(description='Template: publish Bruno results to Zephyr (dry-run supported)')
+    parser.add_argument('report', help='Path to Bruno report (JUnit XML or JSON)')
+    parser.add_argument('mapping', nargs='?', help='Optional mapping JSON file (test name -> zephyr_id)')
+    parser.add_argument('--dry-run', action='store_true', help='Print payloads without performing HTTP requests')
+    args = parser.parse_args()
+
     mapping = None
-    if len(sys.argv) >= 3:
-        with open(sys.argv[2], 'r', encoding='utf8') as f:
+    if args.mapping:
+        with open(args.mapping, 'r', encoding='utf8') as f:
             mapping = json.load(f)
 
-    if report.endswith('.xml'):
-        results = parse_junit(report)
+    if args.report.endswith('.xml'):
+        results = parse_junit(args.report)
     else:
-        results = parse_json(report)
+        results = parse_json(args.report)
 
     for r in results:
         name = r.get('name') if isinstance(r, dict) else r
@@ -94,7 +97,11 @@ def main():
         if not zid:
             print(f'No zephyr id found for test: {name} — skipping')
             continue
-        create_execution(zid, status, comment=f'Automated: {name}')
+        if args.dry_run:
+            print(f'[DRY-RUN] Would create/update execution for {zid} -> {status} (test: {name})')
+            continue
+        ok = create_execution(zid, status, comment=f'Automated: {name}')
+        print(f'Execution update for {zid}: {"OK" if ok else "FAILED"}')
 
 if __name__ == '__main__':
     main()
