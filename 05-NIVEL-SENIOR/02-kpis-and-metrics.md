@@ -1,3 +1,4 @@
+```markdown
 # KPIs e Métricas para QA — Nível Sênior
 
 Este documento define KPIs acionáveis, fórmulas e exemplos de metas para monitorar a qualidade e o impacto das práticas de QA.
@@ -81,3 +82,4 @@ Este documento define KPIs acionáveis, fórmulas e exemplos de metas para monit
   - `05-NIVEL-SENIOR/runbook-alerts.md` com passos de triagem e responsáveis.
 
 Referências: `04-NIVEL-PLENO/03-pipeline-patterns.md`, `05-NIVEL-SENIOR/01-shift-left.md`.
+```

@@ -1,0 +1,23 @@
+{
+  "__meta": "Template Grafana dashboard skeleton — preencher via UI ou editar JSON",
+  "title": "QA - Dashboard Template",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "CI Feedback Time (avg)",
+      "targets": []
+    },
+    {
+      "type": "stat",
+      "title": "Coverage (critical modules)",
+      "targets": []
+    },
+    {
+      "type": "graph",
+      "title": "5xx Rate",
+      "targets": []
+    }
+  ],
+  "templating": { "list": [] },
+  "time": { "from": "now-30d", "to": "now" }
+}
