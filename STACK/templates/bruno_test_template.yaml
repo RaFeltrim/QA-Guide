@@ -1,0 +1,17 @@
+name: Example Bruno API Test
+description: Template de caso Bruno para testar endpoint /health
+request:
+  method: GET
+  url: "{{baseUrl}}/health"
+  headers:
+    Accept: application/json
+assertions:
+  - type: status
+    expected: 200
+  - type: jsonpath
+    path: $.status
+    expected: UP
+
+# metadados opcionais para integração com Zephyr
+metadata:
+  zephyr_id: "" # preencha com o id do Test no Zephyr (ex: Z-1234) ou deixe vazio e use mapeamento
