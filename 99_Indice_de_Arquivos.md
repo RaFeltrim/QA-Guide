@@ -16,4 +16,10 @@
 - **Exemplos Postman:** [exemplos/postman/collection-example.json](exemplos/postman/collection-example.json), [exemplos/postman/env-example.json](exemplos/postman/env-example.json)
 - **Exemplos JMeter:** [exemplos/jmeter/plan.jmx](exemplos/jmeter/plan.jmx)
 
+- **Exemplos Zephyr:** [exemplos/zephyr/README.md](exemplos/zephyr/README.md)
+
+**Gestão de Testes (Zephyr)**
+
+- **Zephyr (guia):** [modelos/zephyr.md](modelos/zephyr.md)
+
 Arquivos originais por nível permanecem em suas pastas para referência e granularidade.
