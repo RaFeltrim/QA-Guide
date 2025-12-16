@@ -100,11 +100,11 @@ Este guia apresenta um percurso de aprendizagem e entregáveis práticos para QA
 - Uso intensivo de casos reais (CNPJ) para aprendizagem aplicada
 - Gabaritos e correções comentadas para feedback contínuo
 
-Referências internas que servem de base para este guia:
-- [Shift Left Testing — README](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/shift-left-testing/README.md)
-- [Casos de Teste Realistas](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/casos-teste-realistas.md)
-- [Guia de Implementação (validador)](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/guides/guia-implementacao.md)
-- [Plano de Estudo / Treinamento](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/training/plano-estudo.md)
+Referências canônicas
+
+Este guia referencia e reutiliza material do repositório `CNPJ-Docs`. Para consultar os recursos originais e links canônicos, veja o arquivo de referências:
+
+- [QA-Guide/REFERENCES.md](REFERENCES.md)
 
 ---
 

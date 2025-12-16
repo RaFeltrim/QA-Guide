@@ -1,0 +1,11 @@
+name: QA Guide E2E
+
+on: [workflow_dispatch]
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Placeholder
+        run: echo "Adicionar passos E2E aqui"
