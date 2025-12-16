@@ -1,0 +1,27 @@
+{
+  "name": "qa-guide-example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "pytest",
+    "test:unit": "pytest -q",
+    "e2e": "npx cypress open",
+    "e2e:headless": "npx cypress run",
+    "perf": "k6 run --out json=results.json scripts/load_test.js"
+  },
+  "devDependencies": {
+    "cypress": "^12.0.0"
+  }
+}
+{
+  "name": "qa-guide",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}

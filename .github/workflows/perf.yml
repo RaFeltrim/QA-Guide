@@ -1,0 +1,11 @@
+name: QA Guide Performance
+
+on: [workflow_dispatch]
+
+jobs:
+  perf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Placeholder
+        run: echo "Adicionar passos de performance (k6) aqui"

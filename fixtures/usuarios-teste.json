@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Ana Silva",
+    "email": "ana.silva+test@example.com",
+    "role": "tester"
+  },
+  {
+    "id": 2,
+    "name": "Carlos Souza",
+    "email": "carlos.souza+test@example.com",
+    "role": "dev"
+  },
+  {
+    "id": 3,
+    "name": "Mariana Costa",
+    "email": "mariana.costa+test@example.com",
+    "role": "qa-lead"
+  }
+]
+[
+  {
+    "id": 1,
+    "email": "qa+teste1@example.com",
+    "role": "tester"
+  }
+]

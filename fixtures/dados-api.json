@@ -1,0 +1,4 @@
+{
+  "base_url": "https://api.exemplo.local",
+  "endpoints": ["/login", "/usuarios", "/cnpj/validar"]
+}

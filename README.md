@@ -1,3 +1,90 @@
+# QA-Guide — Como usar este repositório
+
+Este repositório contém guias, exercícios e gabaritos para formação em QA (Estagiário → Sênior).
+
+Sumário rápido
+
+- `02-NIVEL-ESTAGIARIO/` — testes manuais, bug reports e checklists.
+- `03-NIVEL-JUNIOR/` — pytest, jest, CI básico, casos de teste e exercícios práticos.
+- `04-NIVEL-PLENO/` — E2E (Cypress), performance (k6), padrões de pipeline e IA.
+- `gabarito/` — templates, exemplos de código e testes.
+- `fixtures/` — arquivos JSON com dados de exemplo.
+ - `fixtures/` — arquivos JSON com dados de exemplo.
+
+Veja também:
+- [ROADMAP.md](ROADMAP.md) — plano de entregas e prioridades
+- [CONTRIBUIR.md](CONTRIBUIR.md) — como contribuir com o projeto
+
+Pré-requisitos (local)
+
+- Node.js (18+) e `npm` para executar Cypress e scripts JS.
+- Python 3.8+ e `pip` para executar exemplos em Python.
+- `k6` instalado para executar testes de performance (opcional).
+
+Instalação rápida
+
+Python (recomendado criar venv):
+
+```bash
+python -m venv .venv
+source .venv/bin/activate   # macOS / Linux
+.venv\Scripts\Activate.ps1 # Windows PowerShell
+pip install -r requirements.txt
+```
+
+Node (instalar dependências):
+
+```bash
+npm ci
+```
+
+Comandos úteis
+
+- Executar testes Python (pytest):
+
+```bash
+pytest -q
+```
+
+- Executar Cypress (headless):
+
+```bash
+npm run e2e:headless
+```
+
+- Executar perf (k6):
+
+```bash
+npm run perf
+```
+
+Estrutura de desenvolvimento
+
+- Os exercícios automatizados de exemplo estão em `gabarito/exemplos-codigo/`.
+- Coloque novos casos de teste em `03-NIVEL-JUNIOR/` ou `04-NIVEL-PLENO/` conforme o nível.
+- Use os templates em `gabarito/templates/` para padronizar casos e bug reports.
+
+Como contribuir
+
+- Abra um branch com `feature/docs/<resumo>`.
+- Crie PR com descrição, link para issues relacionadas e marque revisores.
+- Para artefatos gerados por IA, inclua o prompt em `gabarito/prompts/` e marque o PR com `ai-generated`.
+
+Suporte local — dicas rápidas
+
+- Para rodar apenas os exemplos Python do validador de CNPJ:
+
+```bash
+pytest gabarito/exemplos-codigo/tests/test_validador_pytest.py -q
+```
+
+- Se precisar iniciar a API de testes local, verifique `npm run start:test` nos `package.json` ou inicie o serviço conforme o README do projeto relacionado.
+
+Problemas e contatos
+
+- Abra uma issue usando o template em `.github/ISSUE_TEMPLATE.md`.
+
+— Fim —
 # QA-Guide
 
 Guia completo de Quality Assurance (QA) — trilhas do nível Estagiário ao Sênior.
@@ -129,16 +216,11 @@ Alguns modelos úteis estão em `gabarito/`, reutilize-os para padronizar entreg
 
 ## Integração com `CNPJ-Docs`
 
-Este guia referencia e reutiliza conteúdo do projeto `CNPJ-Docs` para casos práticos, massa de dados e exemplos de implementação (validador de CNPJ). Links diretos:
+O `QA-Guide` referencia materiais do repositório `CNPJ-Docs`. Para evitar duplicação e manter uma fonte de verdade, consulte o arquivo de referências canônicas:
 
-- Repositório de origem: https://github.com/RaFeltrim/CNPJ-Docs
-- Documentos referenciados no conteúdo:
-  - [Casos de Teste Realistas](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/casos-teste-realistas.md)
-  - [Shift Left Testing — README](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/testing/shift-left-testing/README.md)
-  - [Guia de Implementação (validador)](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/guides/guia-implementacao.md)
-  - [Plano de Estudo / Treinamento](https://github.com/RaFeltrim/CNPJ-Docs/blob/main/docs/training/plano-estudo.md)
+- [QA-Guide/REFERENCES.md](REFERENCES.md)
 
-Ao aplicar os exercícios, você pode clonar o `CNPJ-Docs` e usar os arquivos de exemplo como fixtures e referências.
+Se precisar dos arquivos originais como fixtures, clone `CNPJ-Docs` conforme instruções no `REFERENCES.md`.
 
 ---
 
