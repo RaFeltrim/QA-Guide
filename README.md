@@ -24,7 +24,7 @@ This repository contains a complete learning path for Quality Assurance professi
 QA-Guide/
 ├── README.md (This file - with language selector)
 ├── en/ (English version - main content)
-│   ├── 00_Guia_do_QA.md
+│   ├── 00_Guia_QA.md
 │   ├── capitulos/
 │   ├── modelos/
 │   ├── ferramentas/

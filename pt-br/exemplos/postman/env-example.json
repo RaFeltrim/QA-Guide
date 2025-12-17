@@ -1,0 +1,11 @@
+{
+  "id": "env-example",
+  "name": "env-example",
+  "values": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.example.com",
+      "enabled": true
+    }
+  ]
+}
