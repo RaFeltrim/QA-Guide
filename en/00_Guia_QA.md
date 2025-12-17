@@ -1,12 +1,12 @@
-00 — Guia do QA
+# 00 — QA Guide
 
-Como navegar neste repositório
+How to navigate this repository
 
-1. Comece por este arquivo (`00_Guia_QA.md`) para entender o objetivo e a ordem de leitura.
-2. Consulte `capitulos/` para os capítulos consolidados por nível.
-3. Utilize `modelos/` para templates reutilizáveis e `exemplos/` para snippets de código.
+1. Start with this file (`00_Guia_QA.md`) to understand the purpose and reading order.
+2. Check `capitulos/` for consolidated chapters by level.
+3. Use `modelos/` for reusable templates and `exemplos/` for code snippets.
 
-Ordem sugerida de leitura
+Suggested reading order
 
 1. `capitulos/01_Fundamentos.md`
 2. `capitulos/02_Estagio.md`
@@ -14,16 +14,16 @@ Ordem sugerida de leitura
 4. `capitulos/04_Pleno.md`
 5. `capitulos/05_Senior.md`
 
-Nota: os arquivos originais permanecem sob `01-FUNDAMENTOS/`, `03-NIVEL-JUNIOR/`, etc., para referência e granularidade.
+Note: The original files remain under `01-FUNDAMENTOS/`, `03-NIVEL-JUNIOR/`, etc., for reference and granularity.
 
-Uso dos templates e integração CI
+Using templates and CI integration
 
-- Os templates para integração Bruno/JMeter/Zephyr estão em `STACK/templates/`.
-- Exemplo de mapping (mapeamento entre nome de teste e `zephyr_id`): `STACK/templates/mapping-example.json`.
-- Fluxo CI recomendado (resumo):
-	1. Executar testes Bruno em modo non-interactive e gerar `reports/bruno/results.xml` (JUnit) ou JSON.
-	2. Publicar artefatos no job (para inspeção).
-	3. Executar `python STACK/templates/bruno-to-zephyr-template.py reports/bruno/results.xml STACK/templates/mapping-example.json --dry-run`.
-	4. Validar o dry-run; depois executar sem `--dry-run` após ajustar endpoints.
+- Templates for Bruno/JMeter/Zephyr integration are in `STACK/templates/`.
+- Mapping example (mapping between test name and `zephyr_id`): `STACK/templates/mapping-example.json`.
+- Recommended CI flow (summary):
+  1. Run Bruno tests in non-interactive mode and generate `reports/bruno/results.xml` (JUnit) or JSON.
+  2. Publish artifacts in the job (for inspection).
+  3. Run `python STACK/templates/bruno-to-zephyr-template.py reports/bruno/results.xml STACK/templates/mapping-example.json --dry-run`.
+  4. Validate the dry-run; then run without `--dry-run` after adjusting endpoints.
 
-Considere atualizar `99_Indice_de_Arquivos.md` e o README do projeto com links para os templates de integração.
+Consider updating `99_Indice_de_Arquivos.md` and the project README with links to integration templates.

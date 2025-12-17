@@ -4,7 +4,7 @@ Bem-vindo ao repositório abrangente do Guia QA, projetado para ajudar os profis
 
 <div align="center">
   <br>
-  <a href="../en/README.md">
+  <a href="../README.md">
     <img src="https://img.shields.io/badge/Not%20familiar%20with%20Portuguese%3F-View%20in%20English-blue?style=for-the-badge&logo=google-translate" alt="Not familiar with Portuguese? View in English">
   </a>
   <br><br>
