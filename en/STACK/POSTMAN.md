@@ -1,32 +1,55 @@
-**Guia Completo — Postman (Testes de API)**
+**Complete Guide — Postman (API Testing)**
 
-Visão geral
-- `Postman` é uma plataforma de colaboração para desenvolvimento e teste de APIs. Permite criar, testar, documentar e monitorar APIs de forma intuitiva.
+Overview
+- `Postman` is a collaborative platform for API development and testing. It allows creating, testing, documenting, and monitoring APIs intuitively.
 
-Instalação & requisitos
-- Baixe o Postman: https://www.postman.com/downloads/
-- Ou instale via package manager:
+Installation & Requirements
+- Download Postman: https://www.postman.com/downloads/
+- Or install via package manager:
   - macOS: `brew install --cask postman`
   - Windows: `choco install postman`
 
-Estrutura de coleções e ambientes
-- Organização recomendada:
-  - Coleções por recurso ou jornada (ex: Users, Orders, Auth)
-  - Ambientes: `dev`, `staging`, `prod` com variáveis específicas
-  - Pré-request scripts para geração de tokens
-  - Testes em JavaScript na aba `Tests`
+Project Structure
+- Folder convention:
+  - `postman/collections/` — request collections
+  - `postman/environments/` — environments (dev, staging, prod)
+  - `postman/data/` — data for parameterized tests
+  - `postman/scripts/` — utility scripts
 
-Formato de uma requisição básica
+Quick Setup
+```bash
+# Install Newman (CLI collection runner)
+npm install -g newman
+
+# Or download Postman App:
+# https://www.postman.com/downloads/
+```
+
+Hello World
+1. Open Postman
+2. Create new request:
+   - Method: GET
+   - URL: https://jsonplaceholder.typicode.com/posts/1
+3. Click "Send"
+4. Verify 200 status and JSON response
+
+Via Newman:
+```bash
+# Run simple request
+newman run collection.json -e environment.json
+```
+
+Basic Request Format
 ```javascript
-// Variáveis de ambiente
+// Environment variables
 // {{baseUrl}} = https://api.staging.example.com
-// {{authToken}} = token_gerado_no_pre_request
+// {{authToken}} = token_generated_in_pre_request
 
 GET {{baseUrl}}/users/123
 Authorization: Bearer {{authToken}}
 ```
 
-Testes básicos (exemplos)
+Basic Tests (examples)
 ```javascript
 // Status code
 pm.test("Status code is 200", function () {
@@ -40,14 +63,14 @@ pm.test("Response has required fields", function () {
     pm.expect(jsonData).to.have.property('name');
 });
 
-// Validação de valores
+// Value validation
 pm.test("User name is correct", function () {
     const jsonData = pm.response.json();
     pm.expect(jsonData.name).to.eql("John Doe");
 });
 ```
 
-Pre-request script (gerar token)
+Pre-request Script (generate token)
 ```javascript
 pm.sendRequest({
     url: pm.environment.get("baseUrl") + "/auth/login",
@@ -70,36 +93,125 @@ pm.sendRequest({
 });
 ```
 
-Execução local
-- Interface gráfica: abrir coleções no Postman App
-- CLI com Newman: `newman run collection.json -e env.json`
+Real Scenario: User Authentication
 
-Integração com CI
-- No pipeline (GitHub Actions):
-  - Instalar Newman: `npm install -g newman`
-  - Executar coleção: `newman run collection.json -e env.json`
-  - Publicar relatórios: `--reporters cli,junit --reporter-junit-export results.xml`
+**Environment** - `postman/environments/dev.json`:
+```json
+{
+  "id": "dev-env",
+  "name": "Development",
+  "values": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.dev.example.com",
+      "enabled": true
+    },
+    {
+      "key": "username",
+      "value": "testuser@example.com",
+      "enabled": true
+    },
+    {
+      "key": "password",
+      "value": "testpassword",
+      "enabled": true
+    }
+  ]
+}
+```
 
-Golden tip
-- Use variáveis de coleção para valores que mudam entre requisições mas são constantes na coleção, ao invés de repetir valores hardcoded.
+**Collection** - `postman/collections/auth.json` (excerpt):
+```json
+{
+  "info": {
+    "name": "Authentication API"
+  },
+  "item": [
+    {
+      "name": "Login User",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response has access token\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.have.property('access_token');",
+              "    pm.environment.set(\"authToken\", jsonData.access_token);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "login"]
+        }
+      }
+    }
+  ]
+}
+```
 
-Exemplo de uso correto:
+Local Execution
+- GUI: open collections in Postman App
+- CLI with Newman: `newman run collection.json -e env.json`
+
+CI Integration
+- In pipeline (GitHub Actions):
+  - Install Newman: `npm install -g newman`
+  - Run collection: `newman run collection.json -e env.json`
+  - Publish reports: `--reporters cli,junit --reporter-junit-export results.xml`
+
+Golden Tip
+- Use collection variables for values that change between requests but are constant in the collection, instead of repeating hardcoded values.
+
+Correct Usage Example:
 ```javascript
-// ✅ Bom - Variável de coleção
+// ✅ Good - Collection variable
 pm.collectionVariables.set("userId", jsonData.user.id);
 
-// ❌ Ruim - Hardcoded
+// ❌ Bad - Hardcoded
 const userId = "12345";
 ```
 
-Boas práticas e convenções
-- Não commite credenciais nos arquivos de coleção
-- Use ambientes para diferentes stages
-- Documente pré-condições e dados de limpeza
-- Organize coleções por funcionalidades
-- Use nomes descritivos para requisições
+Golden Tip
+**Use environment and collection variables for dynamic values.**
 
-Checklist antes do push
-- Validar que ambientes não contêm secrets
-- Confirmar que testes cobrem cenários positivos e negativos
-- Verificar documentação das requisições
+```javascript
+// ❌ Bad - Hardcoded values
+const userId = "12345";
+
+// ✅ Good - Reusable variables
+pm.environment.set("userId", jsonData.user.id);
+pm.collectionVariables.set("sessionId", sessionId);
+```
+
+Best Practices and Conventions
+- Don't commit credentials in collection files
+- Use environments for different stages
+- Document pre-conditions and cleanup data
+- Organize collections by functionalities
+- Use descriptive names for requests
+
+Pre-push Checklist
+- Validate that environments don't contain secrets
+- Confirm tests cover positive and negative scenarios
+- Verify request documentation

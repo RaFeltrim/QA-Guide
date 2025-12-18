@@ -9,12 +9,35 @@ Instalação & requisitos
   - macOS: `brew install --cask postman`
   - Windows: `choco install postman`
 
-Estrutura de coleções e ambientes
-- Organização recomendada:
-  - Coleções por recurso ou jornada (ex: Users, Orders, Auth)
-  - Ambientes: `dev`, `staging`, `prod` com variáveis específicas
-  - Pré-request scripts para geração de tokens
-  - Testes em JavaScript na aba `Tests`
+Estrutura de projetos e arquivos
+- Convenção de pastas:
+  - `postman/collections/` — coleções de requisições
+  - `postman/environments/` — ambientes (dev, staging, prod)
+  - `postman/data/` — dados para testes parametrizados
+  - `postman/scripts/` — scripts utilitários
+
+Setup Rápido
+```bash
+# Instalar Newman (executor de coleções via CLI)
+npm install -g newman
+
+# Ou baixar o Postman App:
+# https://www.postman.com/downloads/
+```
+
+Hello World
+1. Abrir Postman
+2. Criar nova requisição:
+   - Method: GET
+   - URL: https://jsonplaceholder.typicode.com/posts/1
+3. Clicar em "Send"
+4. Verificar status 200 e resposta JSON
+
+Via Newman:
+```bash
+# Executar requisição simples
+newman run collection.json -e environment.json
+```
 
 Formato de uma requisição básica
 ```javascript
@@ -70,6 +93,83 @@ pm.sendRequest({
 });
 ```
 
+Cenário Real: Autenticação de Usuário
+
+**Environment** - `postman/environments/dev.json`:
+```json
+{
+  "id": "dev-env",
+  "name": "Development",
+  "values": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.dev.example.com",
+      "enabled": true
+    },
+    {
+      "key": "username",
+      "value": "testuser@example.com",
+      "enabled": true
+    },
+    {
+      "key": "password",
+      "value": "testpassword",
+      "enabled": true
+    }
+  ]
+}
+```
+
+**Collection** - `postman/collections/auth.json` (fragmento):
+```json
+{
+  "info": {
+    "name": "Authentication API"
+  },
+  "item": [
+    {
+      "name": "Login User",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response has access token\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.have.property('access_token');",
+              "    pm.environment.set(\"authToken\", jsonData.access_token);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "login"]
+        }
+      }
+    }
+  ]
+}
+```
+
 Execução local
 - Interface gráfica: abrir coleções no Postman App
 - CLI com Newman: `newman run colecao.json -e ambiente.json`
@@ -90,6 +190,18 @@ pm.collectionVariables.set("userId", jsonData.usuario.id);
 
 // ❌ Ruim - Hardcoded
 const userId = "12345";
+```
+
+Dica de Ouro
+**Use variáveis de ambiente e collection variables para valores dinâmicos.**
+
+```javascript
+// ❌ Ruim - Valores hardcoded
+const userId = "12345";
+
+// ✅ Bom - Variáveis reutilizáveis
+pm.environment.set("userId", jsonData.user.id);
+pm.collectionVariables.set("sessionId", sessionId);
 ```
 
 Boas práticas e convenções

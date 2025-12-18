@@ -5,6 +5,7 @@ How to navigate this repository
 1. Start with this file (`00_Guia_QA.md`) to understand the purpose and reading order.
 2. Check `capitulos/` for consolidated chapters by level.
 3. Use `modelos/` for reusable templates and `exemplos/` for code snippets.
+4. Check `STACK/` for complete documentation of automation tools (Cypress, Playwright, k6, Postman, GitHub Actions).
 
 Suggested reading order
 

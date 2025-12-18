@@ -13,27 +13,35 @@ Estrutura de projetos e arquivos
   - `cypress/integration/` — arquivos de teste (specs)
   - `cypress/pages/` — Page Objects para interações
   - `cypress/support/` — comandos customizados e configurações
+  - `cypress/reports/` — relatórios gerados
+
+Setup Rápido
+```bash
+# Instalar Cypress como dependência de desenvolvimento
+npm install cypress --save-dev
+
+# Abrir Cypress pela primeira vez (cria estrutura padrão)
+npx cypress open
+```
 
 Formato de um teste básico
 ```javascript
-describe('Funcionalidade de Login', () => {
-  it('deve fazer login com credenciais válidas', () => {
-    cy.visit('/login')
-    cy.get('[data-cy=email]').type('usuario@exemplo.com')
-    cy.get('[data-cy=password]').type('senha123')
-    cy.get('[data-cy=submit]').click()
-    cy.url().should('include', '/dashboard')
+describe('Meu Primeiro Teste', () => {
+  it('deve visitar a página inicial', () => {
+    cy.visit('https://example.com')
+    cy.contains('h1', 'Example Domain')
   })
 })
 ```
 
-Page Object Model (exemplo)
+Page Object Model (exemplo completo)
 ```javascript
 class LoginPage {
   constructor() {
     this.emailInput = '[data-cy=email]'
     this.passwordInput = '[data-cy=password]'
-    this.submitButton = '[data-cy=submit]'
+    this.submitButton = '[data-cy=login-btn]'
+    this.errorMessage = '[data-cy=error-msg]'
   }
 
   visit() {
@@ -41,15 +49,52 @@ class LoginPage {
     return this
   }
 
-  login(email, password) {
+  fillEmail(email) {
     cy.get(this.emailInput).type(email)
+    return this
+  }
+
+  fillPassword(password) {
     cy.get(this.passwordInput).type(password)
+    return this
+  }
+
+  submit() {
     cy.get(this.submitButton).click()
+    return this
+  }
+
+  login(email, password) {
+    this.fillEmail(email)
+    this.fillPassword(password)
+    this.submit()
     return this
   }
 }
 
 export default new LoginPage()
+```
+
+Teste completo usando Page Object
+```javascript
+import LoginPage from '../pages/LoginPage'
+
+describe('Funcionalidade de Login', () => {
+  beforeEach(() => {
+    LoginPage.visit()
+  })
+
+  it('deve fazer login com credenciais válidas', () => {
+    LoginPage.login('usuario@exemplo.com', 'senha123')
+    cy.url().should('include', '/dashboard')
+    cy.get('[data-cy=welcome-message]').should('be.visible')
+  })
+
+  it('deve mostrar erro com credenciais inválidas', () => {
+    LoginPage.login('invalido@exemplo.com', 'senhaerrada')
+    cy.get(LoginPage.errorMessage).should('contain', 'Credenciais inválidas')
+  })
+})
 ```
 
 Execução local

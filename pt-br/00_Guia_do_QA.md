@@ -5,6 +5,7 @@ Como navegar neste repositório
 1. Comece por este arquivo (`00_Guia_do_QA.md`) para entender o objetivo e a ordem de leitura.
 2. Consulte `capitulos/` para os capítulos consolidados por nível.
 3. Utilize `modelos/` para templates reutilizáveis e `exemplos/` para snippets de código.
+4. Consulte `STACK/` para documentação completa das ferramentas de automação (Cypress, Playwright, k6, Postman, GitHub Actions).
 
 Ordem sugerida de leitura
 

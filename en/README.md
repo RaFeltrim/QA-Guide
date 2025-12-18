@@ -29,6 +29,7 @@ QA-Guide/
 │   ├── modelos/
 │   ├── ferramentas/
 │   ├── praticas/
+│   ├── STACK/ (Automation tools: Cypress, Playwright, k6, Postman, GitHub Actions)
 │   └── ... (all English content)
 ├── pt-br/ (Portuguese version)
 │   ├── 00_Guia_do_QA.md
@@ -36,6 +37,7 @@ QA-Guide/
 │   ├── modelos/
 │   ├── ferramentas/
 │   ├── praticas/
+│   ├── STACK/ (Ferramentas de automação: Cypress, Playwright, k6, Postman, GitHub Actions)
 │   └── ... (all Portuguese content)
 └── ... (other shared files)
 ```
