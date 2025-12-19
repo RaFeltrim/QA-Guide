@@ -23,5 +23,6 @@
 - **Postman (API):** [STACK/POSTMAN.md](STACK/POSTMAN.md)
 - **GitHub Actions (CI/CD):** [STACK/GITHUB-ACTIONS.md](STACK/GITHUB-ACTIONS.md)
 - **Outras Ferramentas:** [STACK/BRUNO.md](STACK/BRUNO.md), [STACK/JMETER.md](STACK/JMETER.md), [STACK/ZEPHYR.md](STACK/ZEPHYR.md)
+ - **BDD / Gherkin:** [STACK/BDD_Gherkin/README.md](STACK/BDD_Gherkin/README.md)
 
 Arquivos originais por nível permanecem em suas pastas para referência e granularidade.
