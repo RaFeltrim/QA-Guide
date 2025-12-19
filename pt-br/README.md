@@ -30,6 +30,7 @@ QA-Guide/
 │   ├── ferramentas/
 │   ├── praticas/
 │   ├── STACK/ (Ferramentas de automação: Cypress, Playwright, k6, Postman, GitHub Actions)
+│   ├── posts/ (Conteúdo editorial: plano, templates, rascunhos)
 │   └── ... (todo conteúdo em inglês)
 ├── pt-br/ (Versão em português)
 │   ├── 00_Guia_do_QA.md
@@ -38,6 +39,7 @@ QA-Guide/
 │   ├── ferramentas/
 │   ├── praticas/
 │   ├── STACK/ (Ferramentas de automação: Cypress, Playwright, k6, Postman, GitHub Actions)
+│   ├── posts/ (Conteúdo editorial: plano, templates, rascunhos)
 │   └── ... (todo conteúdo em português)
 └── ... (outros arquivos compartilhados)
 ```
@@ -57,6 +59,7 @@ Para começar sua jornada de aprendizado em QA:
 - ⚙️ **Integração CI/CD** - Pipelines do GitHub Actions para testes automatizados
 - 📊 **Teste de Performance** - Técnicas de teste de carga e estresse
 - 🔧 **Melhores Práticas** - Práticas padrão da indústria de QA e modelos
+- 📝 **Conteúdo Editorial** - Plano editorial, templates e rascunhos de posts técnicos
 
 ## Contribuindo
 

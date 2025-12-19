@@ -30,6 +30,7 @@ QA-Guide/
 │   ├── ferramentas/
 │   ├── praticas/
 │   ├── STACK/ (Automation tools: Cypress, Playwright, k6, Postman, GitHub Actions)
+│   ├── posts/ (Editorial content: plan, templates, drafts)
 │   └── ... (all English content)
 ├── pt-br/ (Portuguese version)
 │   ├── 00_Guia_do_QA.md
@@ -57,6 +58,7 @@ To begin your QA learning journey:
 - ⚙️ **CI/CD Integration** - GitHub Actions pipelines for automated testing
 - 📊 **Performance Testing** - Load and stress testing techniques
 - 🔧 **Best Practices** - Industry-standard QA practices and templates
+- 📝 **Editorial Content** - Editorial plan, templates, and draft technical posts
 
 ## Contributing
 
