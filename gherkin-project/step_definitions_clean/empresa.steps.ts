@@ -1,8 +1,10 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import { EmpresaService } from '../support/services/empresa.service';
+import { CnpjService } from '../support/services/cnpj.service';
 import { TestWorld } from '../support/world';
 
 const empresaService = new EmpresaService();
+const cnpjService = new CnpjService();
 
 Given('que existe um CNPJ válido {string}', function(this: TestWorld, cnpj: string) {
   this.inputCnpj = cnpj;
@@ -13,18 +15,22 @@ Given('que existe um CNPJ inválido {string}', function(this: TestWorld, cnpj: s
 });
 
 Given('que já existe empresa cadastrada com CNPJ {string}', function(this: TestWorld, cnpj: string) {
+  // Normalize input before creating to avoid validation failures for formatted inputs
+  const norm = cnpjService.normalize(cnpj || '');
   try {
-    empresaService.createCompany({ cnpj, razaoSocial: 'Empresa Existente' });
+    empresaService.createCompany({ cnpj: norm, razaoSocial: 'Empresa Existente' });
   } catch (e) {
-    // ignore
+    // if creation fails, surface error for test clarity
+    throw e;
   }
 });
 
 Given('que existe uma empresa cadastrada com CNPJ {string} e razão social {string}', function(this: TestWorld, cnpj: string, razao: string) {
+  const norm = cnpjService.normalize(cnpj || '');
   try {
-    empresaService.createCompany({ cnpj, razaoSocial: razao });
+    empresaService.createCompany({ cnpj: norm, razaoSocial: razao });
   } catch (e) {
-    // ignore
+    throw e;
   }
 });
 
