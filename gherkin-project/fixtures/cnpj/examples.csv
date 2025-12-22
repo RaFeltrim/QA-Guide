@@ -1,0 +1,22 @@
+example_id,group,input,expected,origin_note
+e1,alfanumerico,12.345.678/0001-95,valid,features/cnpj_alfanumerico_01.feature
+e2,alfanumerico,12345678000195,valid,merged sample
+e3,alfanumerico,12A345678/0001-95,invalid,features/cnpj_alfanumerico_03.feature
+e4,alfanumerico,00000000000000,invalid,common invalid zeros
+n1,numerico,0012345678000195,valid,features/cnpj_numerico_01.feature
+n2,numerico,11222333000180,invalid,checksum example
+n3,numerico,12345678,invalid,short length
+n4,numerico,12345678000195,valid,canonical already
+example_id,group,input,expected,origin_note
+E001,alfanumerico,"12.345.678/0001-9A",reject_letter_suffix,features/cnpj_alfanumerico_01.feature
+E002,alfanumerico,"12.345.678/0001-A5",reject_letter_in_dv,features/cnpj_alfanumerico_01.feature
+E003,alfanumerico,"12.345.678/0001-9@A",reject_symbol,features/cnpj_alfanumerico_05.feature
+E004,alfanumerico,"  12.345.678/0001-95  ",normalize_trim,combined_sources
+E005,numerico,"0012345678000195",normalize_leading_zeros,features/cnpj_numerico_01.feature
+E006,numerico,"012345678000195",normalize_idempotent,features/cnpj_numerico_02.feature
+E007,numerico,"12345678",invalid_short,features/cnpj_numerico_03.feature
+E008,numerico,"12345678000195",valid_canonical,combined_sources
+E009,invalid,"abc.def.ghi/jklm-nn",reject_alpha_mixed,consolidated_sources
+E010,invalid,"12.345.678/0001-9512",reject_too_long,edge_cases
+E011,invalid,"12.345.678/0001-9X",reject_letter_in_dv,features/cnpj_alfanumerico_01.feature
+E012,invalid,"00.000.000/0000-00",blacklisted,cnpj_lista_negra.md

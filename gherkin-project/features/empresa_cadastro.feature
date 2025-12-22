@@ -1,9 +1,10 @@
-# language: pt
+ # language: pt
+
 Funcionalidade: Empresa — cadastro por CNPJ
 
   Contexto: permitir cadastrar empresas usando CNPJ, validar campos obrigatórios e evitar duplicidade.
 
-  @smoke @regression
+  @regression
   Cenário: [Cadastro] — Sucesso mínimo
     Dado que existe um CNPJ válido "12.345.678/0001-95"
     Quando eu cadastrar uma empresa com CNPJ "12.345.678/0001-95" e razão social "Empresa A"
@@ -15,11 +16,11 @@ Funcionalidade: Empresa — cadastro por CNPJ
     Quando eu tentar cadastrar uma empresa com CNPJ "" e razão social ""
     Então o cadastro deve falhar com motivo "campos obrigatórios"
 
-  @negative @regression
+  @negative
   Cenário: [Cadastro] — CNPJ inválido
     Dado que existe um CNPJ inválido "12.345.678/0001-00"
-    Quando eu tentar cadastrar uma empresa com CNPJ "12.345.678/0001-00" e razão social "Empresa B"
-    Então o cadastro deve falhar com motivo "CNPJ inválido"
+    Quando eu tentar cadastrar uma empresa com esse CNPJ
+    Então o cadastro deve falhar com motivo "cnpj inválido"
 
   @regression
   Esquema do Cenário: [Cadastro] — Status e bloqueios

@@ -1,13 +1,15 @@
-# language: pt
+ # language: pt
+
 Funcionalidade: Auditoria — logs de tentativas
 
   Contexto: registrar tentativas de validação/cadastro, sem vazar dados sensíveis.
 
   @regression
-  Cenário: [Auditoria] — Registrar tentativa inválida
-    Dado que uma tentativa de cadastro falha por motivo "CNPJ inválido"
+ # language: pt
+Cenário: [Auditoria] — Registrar tentativa inválida
+    Dado que uma tentativa de cadastro falha por motivo "formato_invalido"
     Quando eu registrar a tentativa
-    Então deve existir um log de tentativa com motivo "CNPJ inválido" sem expor o CNPJ completo
+    Então deve existir um log de tentativa com motivo "formato_invalido" sem expor o CNPJ completo
 
   @regression
   Cenário: [Auditoria] — Registrar tentativa bem sucedida
@@ -35,5 +37,5 @@ Funcionalidade: Auditoria — logs de tentativas
 
     Exemplos:
       | motivo            |
-      | CNPJ inválido     |
+      | formato_invalido  |
       | duplicidade       |

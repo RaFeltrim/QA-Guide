@@ -1,4 +1,5 @@
-# language: pt
+ # language: pt
+
 Funcionalidade: Empresa — consulta interna por CNPJ (API)
 
   Contexto: consultar cadastro interno de empresas por CNPJ via API simulada.
@@ -19,7 +20,7 @@ Funcionalidade: Empresa — consulta interna por CNPJ (API)
   Cenário: [Consulta] — CNPJ inválido
     Dado que o CNPJ informado é "123"
     Quando eu consultar a empresa pelo CNPJ "123"
-    Então a resposta deve falhar com motivo "CNPJ inválido"
+    Então a resposta deve falhar com motivo "formato_invalido"
 
   @regression
   Esquema do Cenário: [Consulta] — Variações

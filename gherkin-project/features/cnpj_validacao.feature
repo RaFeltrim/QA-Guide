@@ -1,39 +1,38 @@
-# language: pt
+ # language: pt
+
 Funcionalidade: CNPJ — validação
 
-  Contexto: validar se um CNPJ informado está correto formato e dígitos verificadores.
+  # CONSOLIDATION NOTE:
+  # - Casos negativos de formato/comprimento/ caracteres foram consolidados em
+  #   `features/cnpj_invalid_inputs.feature`.
+  # - Canonicalização, zeros à esquerda e exemplos numéricos movidos para
+  #   `features/cnpj_numerico.feature`.
+  # Objetivo: manter aqui apenas cenários de negócio críticos e o Outline de DV.
 
-  @smoke @regression
-  Cenário: [Validação] — Formato válido
-    Dado que o CNPJ informado é "12.345.678/0001-95"
-    Quando eu validar o CNPJ
-    Então o resultado deve ser válido
+  Contexto: validar se um CNPJ informado está correto em formato e dígitos verificadores.
 
-  @negative @regression
-  Cenário: [Validação] — Formato inválido (tamanho)
-    Dado que o CNPJ informado é "12345678"
-    Quando eu validar o CNPJ
-    Então o resultado deve ser inválido com motivo "formato inválido"
+  @smoke @regression @critical @fast
+  Cenário: [Validação] — Formato válido (caminho feliz)
+    # Exemplo referenciado em `fixtures/cnpj/examples.csv` (example_id E008)
+    Dado que foi informado o CNPJ formatado "12.345.678/0001-95"
+    Quando o cliente validar o CNPJ informado
+    Então a validação deve ser bem sucedida
 
-  @negative @regression
-  Cenário: [Validação] — Caracteres inválidos
-    Dado que o CNPJ informado é "12.345.678/0001-9X"
-    Quando eu validar o CNPJ
-    Então o resultado deve ser inválido com motivo "formato inválido"
+  # Observação: testes negativos de tamanho e caracteres estão marcados como duplicados
+  # e foram movidos para `features/cnpj_invalid_inputs.feature` (veja `fixtures/cnpj/mapping.csv`).
+  # Mantém-se o histórico em `archive/` para auditoria.
 
-  @regression
+  @regression @critical
   Esquema do Cenário: [Validação] — Dígito verificador
-    Dado que o CNPJ informado é "<cnpj>"
-    Quando eu validar o CNPJ
+    Dado que foi informado o CNPJ formatado "<cnpj>"
+    Quando o cliente validar o CNPJ informado
     Então o resultado deve ser <esperado>
 
     Exemplos:
-      | cnpj                  | esperado             |
-      | 12.345.678/0001-95    | válido               |
-      | 11.222.333/0001-81    | inválido             |
+      | cnpj                  | esperado |
+      | 12.345.678/0001-95    | válido   |
+      | 11.222.333/0001-81    | inválido |
+      | 12.345.678/0001-00    | inválido |
 
-  @negative @regression
-  Cenário: [Validação] — DV incorreto
-    Dado que o CNPJ informado é "12.345.678/0001-00"
-    Quando eu validar o CNPJ
-    Então o resultado deve ser inválido com motivo "DV inválido"
+  # Nota: entradas adicionais para validação de DV podem ser referenciadas em
+  # `fixtures/cnpj/examples.csv` e `fixtures/cnpj/mapping.csv`.

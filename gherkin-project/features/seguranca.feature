@@ -1,4 +1,5 @@
-# language: pt
+ # language: pt
+
 Funcionalidade: Segurança — não expor dados sensíveis
 
   Contexto: garantir que respostas e logs não exponham dados sensíveis além do necessário.

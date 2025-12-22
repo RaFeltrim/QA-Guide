@@ -1,0 +1,18 @@
+# Rodar toda a suíte
+cd "C:\Users\RafaelFeltrim\Desktop\Projetos\QA-Guide\gherkin-project"
+npx cucumber-js --require-module ts-node/register --require "step_definitions_clean/**/*.ts" --require "support/**/*.ts" --format progress
+
+# Rodar somente os .feature
+npx cucumber-js features/cnpj_validacao.feature --require-module ts-node/register --require "step_definitions_clean/**/*.ts" --require "support/**/*.ts"
+
+# Rodar um cenário específico
+npx cucumber-js features/cnpj_validacao.feature:12 --require-module ts-node/register --require "step_definitions_clean/**/*.ts" --require "support/**/*.ts"
+
+# Dry-run - compila e mostra passos mapeados, sem executar
+npx cucumber-js --dry-run --require-module ts-node/register --require "step_definitions_clean/**/*.ts" --require "support/**/*.ts"
+
+# Filtrar por tag (ex:@fast)
+npx cucumber-js --tags "@fast" --require-module ts-node/register --require "step_definitions_clean/**/*.ts" --require "support/**/*.ts"
+
+# Gerar relatório JSON
+npx cucumber-js --format json:reports/report.json --require-module ts-node/register --require "step_definitions_clean/**/*.ts" --require "support/**/*.ts"

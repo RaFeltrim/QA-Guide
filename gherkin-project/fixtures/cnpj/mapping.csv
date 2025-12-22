@@ -1,0 +1,13 @@
+arquivo_origem,example_id,input
+features/cnpj_alfanumerico_01.feature,E001,"12.345.678/0001-9A"
+features/cnpj_alfanumerico_01.feature,E002,"12.345.678/0001-A5"
+features/cnpj_alfanumerico_05.feature,E003,"12.345.678/0001-9@A"
+combined_sources,E004,"  12.345.678/0001-95  "
+features/cnpj_numerico_01.feature,E005,"0012345678000195"
+features/cnpj_numerico_02.feature,E006,"012345678000195"
+features/cnpj_numerico_03.feature,E007,"12345678"
+combined_sources,E008,"12345678000195"
+consolidated_sources,E009,"abc.def.ghi/jklm-nn"
+edge_cases,E010,"12.345.678/0001-9512"
+features/cnpj_alfanumerico_01.feature,E011,"12.345.678/0001-9X"
+cnpj_lista_negra.md,E012,"00.000.000/0000-00"

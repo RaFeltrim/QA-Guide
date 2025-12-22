@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "cucumber-js --format progress --format json:reports/cucumber.json",
-    "test:smoke": "cucumber-js --tags @smoke --format progress --format json:reports/cucumber-smoke.json"
+    "test": "cucumber-js --require-module ts-node/register --require step_definitions_clean/**/*.ts --require support/**/*.ts --format progress --format json:reports/cucumber.json",
+    "test:smoke": "cucumber-js --require-module ts-node/register --require step_definitions_clean/**/*.ts --require support/**/*.ts --tags @smoke --format progress --format json:reports/cucumber-smoke.json"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^9.0.0",

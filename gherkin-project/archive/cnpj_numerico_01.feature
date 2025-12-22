@@ -1,0 +1,36 @@
+<!-- ARCHIVE: substituído por features/cnpj_numerico.feature em 2025-12-22 -->
+
+Funcionalidade: CNPJ — canonicalização e zeros à esquerda
+
+  Contexto: garantir equivalência independentemente de zeros à esquerda.
+
+  @regression
+  Cenário: [Canonicalização] — Remove zeros à esquerda quando necessário
+    Dado que foi informado o CNPJ "0012345678000195"
+    Quando o cliente canonicalizar o CNPJ informado
+    Então o resultado deve ser "12345678000195"
+
+  @regression
+  Cenário: [Canonicalização] — Preserve 14 dígitos válidos
+    Dado que foi informado o CNPJ "012345678000195"
+    Quando o cliente canonicalizar o CNPJ informado
+    Então o resultado deve ter 14 dígitos
+ARCHIVED: original path `features/cnpj_numerico_01.feature`
+Moved to: `features/cnpj_numerico.feature`
+Date archived: 2025-12-22
+
+Funcionalidade: CNPJ — canonicalização e zeros à esquerda
+
+  Contexto: garantir equivalência independentemente de zeros à esquerda.
+
+  @regression
+  Cenário: [Canonicalização] — Remove zeros à esquerda quando necessário
+    Dado que foi informado o CNPJ "0012345678000195"
+    Quando o cliente canonicalizar o CNPJ informado
+    Então o resultado deve ser "12345678000195"
+
+  @regression
+  Cenário: [Canonicalização] — Preserve 14 dígitos válidos
+    Dado que foi informado o CNPJ "012345678000195"
+    Quando o cliente canonicalizar o CNPJ informado
+    Então o resultado deve ter 14 dígitos

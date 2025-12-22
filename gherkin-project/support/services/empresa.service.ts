@@ -10,11 +10,16 @@ export class EmpresaService {
     const cnpjNorm = this.cnpjService.normalize(input.cnpj || '');
     if (!cnpjNorm || !input.cnpj || !input.razaoSocial) throw new Error('campos obrigatórios');
     const validation = this.cnpjService.validate(input.cnpj);
-    if (!validation.ok) throw new Error('CNPJ inválido');
+    if (!validation.ok) throw new Error(validation.reason || 'formato_invalido');
     if (this.store.has(cnpjNorm)) throw new Error('duplicidade');
     const company: Company = { cnpj: cnpjNorm, razaoSocial: input.razaoSocial, status: 'ativo' };
     this.store.set(cnpjNorm, company);
     return { ok: true, company };
+  }
+
+  removeCompany(cnpj: string) {
+    const cnpjNorm = this.cnpjService.normalize(cnpj || '');
+    if (this.store.has(cnpjNorm)) this.store.delete(cnpjNorm);
   }
 
   getCompanyByCnpj(cnpj: string) {
@@ -22,7 +27,7 @@ export class EmpresaService {
     if (!cnpjNorm) return null;
     const c = this.store.get(cnpjNorm);
     if (!c) return null;
-    // return masked cnpj to avoid exposing
-    return { cnpj: c.cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5'), razaoSocial: c.razaoSocial, status: c.status };
+    // return masked cnpj to avoid exposing (use CnpjService.maskPublic)
+    return { cnpj: this.cnpjService.maskPublic(c.cnpj), razaoSocial: c.razaoSocial, status: c.status };
   }
 }

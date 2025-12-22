@@ -1,4 +1,5 @@
-# language: pt
+ # language: pt
+
 Funcionalidade: Empresa — duplicidade
 
   Contexto: impedir que o mesmo CNPJ seja cadastrado mais de uma vez.

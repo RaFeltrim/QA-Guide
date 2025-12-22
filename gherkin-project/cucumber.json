@@ -1,9 +1,4 @@
 {
-  "require": [
-    "ts-node/register",
-    "step_definitions/**/*.ts",
-    "support/**/*.ts"
-  ],
   "paths": ["features/**/*.feature"],
   "formats": ["progress", "json:reports/cucumber.json"]
 }
