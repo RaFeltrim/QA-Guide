@@ -27,6 +27,15 @@ Tabela de decisões por arquivo
 | cnpj_validacao_dv.md | MOVE/KEEP como fixture | Pode virar dataset de exemplos para `cnpj_validacao.feature`. | `fixtures/cnpj/dv_examples.csv` |
 | arquivos numerados consolidados (originais) | ARCHIVE | Após consolidação, mover os arquivos originais para `gherkin-project/archive/` por 30 dias antes de remoção. | `gherkin-project/archive/` |
 
+## Atualizações aplicadas (registro breve)
+
+- 2025-12-22: Vários `*.md` foram movidos de `features/` para `docs/cnpj/` ou `archive/` para reduzir ruído e centralizar mapeamentos.
+- 2025-12-22: Features numeradas foram movidas para `archive/` quando aplicável; algumas numeradas remanescentes foram preservadas para revisão adicional.
+- 2025-12-22: Fixtures consolidadas adicionadas em `fixtures/cnpj/examples.csv` e `fixtures/cnpj/mapping.csv`.
+- 2025-12-22: Restauradas `cnpj_validacao.feature`, `cnpj_normalizacao.feature` e `cnpj_invalid_inputs.feature` para `features/` como canônicos após revisão.
+
+Consulte `docs/cnpj/MOVED_FILES.md` e o histórico do Git para ver o mapeamento completo de origem/destino.
+
 Critérios para escolher exemplos representativos
 
 - Para `cnpj_alfanumerico.feature`: manter 1 exemplo com letra aceita no sufixo, 1 com letra em posição inválida, 1 com símbolos especiais, 1 com mistura alfanumérica aparentemente válida mas com DV inválido, 1 com espaços/padding. (Total 4–6 exemplos)

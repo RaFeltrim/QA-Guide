@@ -1,6 +1,16 @@
 # Manifesto de alterações — Consolidação CNPJ (resumo)
 
 Data: 2025-12-22
+
+## Atualizações aplicadas (resumo de ações executadas)
+
+- 2025-12-22: Movidos vários arquivos `*.md` que estavam em `features/` para `docs/cnpj/` (mapeamentos, edge cases e notas de brainstorming).
+- 2025-12-22: Movidas features numeradas (`cnpj_alfanumerico_*`, `cnpj_numerico_*`) para `archive/` quando aplicável.
+- 2025-12-22: Criados `docs/cnpj/*` mapeamentos e `fixtures/cnpj/examples.csv` como fixtures consolidadas.
+- 2025-12-22: Restauradas para `features/` as features críticas: `cnpj_validacao.feature`, `cnpj_normalizacao.feature`, `cnpj_invalid_inputs.feature` (foram temporariamente arquivadas e voltaram ao diretório `features/` para permanecer canônicas).
+
+Observação: commits foram gerados refletindo estas alterações; consulte o histórico Git para detalhes (`git log -- grep cnpj`).
+
 Resumo: lista consolidada de arquivos criados/modificados/arquivados como parte da iniciativa de limpeza e canonicalização da suíte CNPJ.
 
 **Features (principais arquivos canônicos e arquivos numerados preservados/arquivados)**

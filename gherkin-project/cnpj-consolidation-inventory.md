@@ -2,6 +2,16 @@
 
 Data: 2025-12-22
 
+## Atualizações aplicadas (registro breve)
+
+- 2025-12-22: Arquivos de suporte `*.md` que estavam em `features/` foram movidos para `docs/cnpj/` ou `archive/` conforme histórico/uso.
+- 2025-12-22: Features numeradas foram agrupadas e cópias históricas colocadas em `archive/` — algumas numeradas remanescentes em `features/` foram preservadas por decisão de revisão.
+- 2025-12-22: Fixtures consolidadas criadas em `fixtures/cnpj/examples.csv` e `fixtures/cnpj/mapping.csv`.
+- 2025-12-22: Restauradas `cnpj_validacao.feature`, `cnpj_normalizacao.feature`, `cnpj_invalid_inputs.feature` para `features/` como canônicos.
+
+Consulte `docs/cnpj/MOVED_FILES.md` para um mapeamento detalhado dos arquivos movidos.
+
+
 Esse inventário lista arquivos relacionados a CNPJ detectados no repositório, agrupados por tipo. Use este arquivo como referência antes de consolidar/mergear.
 
 ## Resumo rápido
