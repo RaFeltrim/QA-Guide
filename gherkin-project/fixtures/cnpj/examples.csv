@@ -1,4 +1,17 @@
 example_id,group,input,expected,origin_note
+1,alfanumerico,"12.345.678/0001-9A",invalid,features/cnpj_alfanumerico_01.feature
+2,alfanumerico,"12.345.678/0001-A5",invalid,features/cnpj_alfanumerico_01.feature
+3,alfanumerico,"12.345.678/0001-9@A",invalid,features/cnpj_alfanumerico_05.feature
+4,alfanumerico,"  12.345.678/0001-95  ",valid,various_origins_trim
+5,numerico,"0012345678000195",valid,features/cnpj_numerico_01.feature
+6,numerico,"012345678000195",valid,features/cnpj_numerico_02.feature
+7,numerico,"12345678",invalid,features/cnpj_numerico_03.feature
+8,numerico,"12.345.678/0001-00",invalid,validation_examples
+9,numerico,"12345678000195",valid,consolidated_sample
+10,invalid,"abc.def.ghi/jklm-nn",invalid,various_sources
+11,invalid,"12.345.678/0001-9512",invalid,edge_cases
+12,invalid,"00.000.000/0000-00",invalid,cnpj_lista_negra.md
+example_id,group,input,expected,origin_note
 e1,alfanumerico,12.345.678/0001-95,valid,features/cnpj_alfanumerico_01.feature
 e2,alfanumerico,12345678000195,valid,merged sample
 e3,alfanumerico,12A345678/0001-95,invalid,features/cnpj_alfanumerico_03.feature

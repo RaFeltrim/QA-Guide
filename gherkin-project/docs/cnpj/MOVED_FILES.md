@@ -1,3 +1,13 @@
+```markdown
+# Arquivos movidos para `archive/` durante a consolidação
+
+Os arquivos numerados `cnpj_alfanumerico_01..20.feature` e `cnpj_numerico_01..05.feature` foram movidos para `archive/`.
+
+Cada arquivo no `archive/` possui um cabeçalho `<!-- ARCHIVE: substituído por ... em YYYY-MM-DD -->` indicando o canonical substituto.
+
+Use `fixtures/cnpj/mapping.csv` (quando presente) e `docs/cnpj/*_mapping.md` para rastrear a origem de exemplos.
+
+```
 Arquivos movidos/copied para `docs/cnpj/`
 
 Estes arquivos foram copiados de `features/` para `docs/cnpj/` como parte da reorganização para separar dados/brainstorm dos arquivos de feature executáveis.
