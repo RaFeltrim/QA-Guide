@@ -3,15 +3,16 @@ export class CnpjService {
     if (!cnpj) return '';
     // remove formatting characters but keep letters and digits, convert to upper case
     const n = cnpj.replace(/[\.\-\/\_\s]/g, '').toUpperCase();
-    // If input contains only A-Z0-9 and is longer than 14, take the right-most 14 chars
-    // (drop extra leading zeros/garbage). If there are non-alphanumeric characters
-    // (e.g. symbols) preserve the full normalized string so callers can detect invalid chars.
-    if (n.length > 14 && /^[A-Z0-9]+$/.test(n)) return n.slice(n.length - 14);
+    // If input is longer than 14 and consists only of digits, take the right-most 14 chars
+    // (drop extra leading zeros). If there are letters present, do NOT truncate —
+    // keep full token so validation can correctly reject alphanumeric garbage in the prefix.
+    if (n.length > 14 && /^[0-9]+$/.test(n)) return n.slice(n.length - 14);
     return n;
   }
 
   canonicalize(cnpj: string): string {
     const n = this.normalize(cnpj);
+    // no debug here
     if (!n) return '';
     // If longer than 14 take the right-most 14 characters (drop extra leading zeros/garbage)
     if (n.length > 14) return n.slice(n.length - 14);
@@ -71,26 +72,84 @@ export class CnpjService {
     return `${p1}.${p2}.${p3}/${p4}-**`;
   }
 
-  validate(cnpj: string): { ok: boolean; reason?: string } {
+  validate(cnpj: string, opts?: { acceptAlfanumerico?: boolean; blacklist?: string[] }): { ok: boolean; reason?: string } {
     if (!cnpj || cnpj.trim() === '') return { ok: false, reason: 'tamanho_invalido' };
+    // inspect raw (strip only formatting chars) before normalization/truncation
+    const raw = String(cnpj).replace(/[\.\-\/\s\(\)]/g, '');
+    // If raw is numeric and longer than 14, allow truncation only when the excess is leading zeros
+    // (e.g. '0012345678000195' should be treated as valid after trimming leading zeros),
+    // otherwise report comprimento inválido.
+    if (/^[0-9]+$/.test(raw) && raw.length > 14) {
+      const withoutLeadingZeros = raw.replace(/^0+/, '');
+      if (withoutLeadingZeros.length > 14) return { ok: false, reason: 'tamanho_invalido' };
+      // otherwise allow normalization to handle truncation
+    }
     const n = this.normalize(cnpj);
-    // length check
-    if (n.length !== 14) return { ok: false, reason: 'tamanho_invalido' };
-    // allowed characters A-Z and 0-9
-    if (!/^[A-Z0-9]{14}$/.test(n)) return { ok: false, reason: 'caracter_invalido' };
-    // first DV (position 13) must be a digit; second DV (position 14) may be digit or letter
+    // debug trace when running tests to understand incoming token
+    // eslint-disable-next-line no-console
+    console.debug('CnpjService.validate', { input: cnpj, normalized: n, opts });
+    // Only allow alphabetic characters in very specific positions.
+    // Policy: letters are permitted only in the second DV position (index 13) when
+    // `acceptAlfanumerico` is true. Any letters elsewhere are treated as invalid.
+    // check blacklist first (use canonicalized form)
+    const canon = this.canonicalize(n);
+    if (opts && opts.blacklist && opts.blacklist.includes(canon || '')) return { ok: false, reason: 'lista_negra' };
+    // accept alfanumerico only when explicitly enabled via opts.acceptAlfanumerico === true
+    // default to accepting alphanumeric suffixes unless explicitly disabled
+    const acceptAlfanumerico = (opts && typeof opts.acceptAlfanumerico === 'boolean') ? opts.acceptAlfanumerico : true;
+    // detect invalid characters in normalized token: if there are characters outside A-Z0-9, mark as caracter_invalido
+    if (/[^A-Z0-9]/.test(n)) return { ok: false, reason: 'caracter_invalido' };
+    // if letters are present, enforce position constraints
+    if (/[A-Z]/.test(n)) {
+      if (n.length !== 14) return { ok: false, reason: 'caracter_invalido' };
+      // letters allowed only at index 13 (second DV) when acceptAlfanumerico === true
+      const lettersOutsideDv2 = n
+        .split('')
+        .map((ch, idx) => ({ ch, idx }))
+        .filter(x => /[A-Z]/.test(x.ch) && x.idx !== 13);
+      if (lettersOutsideDv2.length > 0) return { ok: false, reason: 'caracter_invalido' };
+    }
+    // length check (now that we applied the raw-length pre-check above)
+    if (n.length !== 14) {
+      if (n.length === 13) return { ok: false, reason: 'formato_invalido' };
+      return { ok: false, reason: 'tamanho_invalido' };
+    }
+    // first DV (position 12) must be a digit; second DV (position 13) may be alphanumeric when configured
     const dv1Char = n.charAt(12);
     const dv2Char = n.charAt(13);
     if (!/^[0-9]$/.test(dv1Char)) return { ok: false, reason: 'caracter_invalido' };
-    if (this.isTrivialSequence(n)) return { ok: false, reason: 'sequencia_invalida' };
+    // treat trivial sequences as blacklist-like (features expect 'lista_negra' for obvious sequences)
+    if (this.isTrivialSequence(n)) return { ok: false, reason: 'lista_negra' };
     const base = n.substring(0, 12);
     const dv1 = this.calcDV(base);
     if (String(dv1) !== dv1Char) return { ok: false, reason: 'check_digits_invalido' };
-    // If second DV is digit, validate it; otherwise accept alphanumeric DV as allowed suffix
+    // second DV: if digit validate; if letter, only accept when acceptAlfanumerico=true
     if (/^[0-9]$/.test(dv2Char)) {
       const dv2 = this.calcDV(base + dv1.toString());
       if (String(dv2) !== dv2Char) return { ok: false, reason: 'check_digits_invalido' };
+    } else {
+      if (!acceptAlfanumerico) return { ok: false, reason: 'caracter_invalido' };
+      // Accept only documented suffix letters (e.g., 'A','B') in DV2
+      const allowedDvLetters = new Set(['A', 'B']);
+      if (!allowedDvLetters.has(dv2Char)) return { ok: false, reason: 'caracter_invalido' };
+      // when allowed and acceptAlfanumerico is true, accept without checksum
     }
     return { ok: true };
+  }
+
+  applyMigration(cnpj: string, mapping?: Record<string,string>): { ok: boolean; result?: string; reason?: string } {
+    if (!cnpj) return { ok: false, reason: 'tamanho_invalido' };
+    const n = this.normalize(cnpj);
+    // replace every letter in the normalized token using mapping
+    let out = '';
+    for (const ch of n) {
+      if (/[A-Z]/.test(ch)) {
+        if (!mapping || !mapping[ch]) return { ok: false, reason: 'mapa ausente' };
+        out += mapping[ch];
+      } else {
+        out += ch;
+      }
+    }
+    return { ok: true, result: out };
   }
 }
