@@ -85,9 +85,11 @@ export class CnpjService {
       // otherwise allow normalization to handle truncation
     }
     const n = this.normalize(cnpj);
-    // debug trace when running tests to understand incoming token
-    // eslint-disable-next-line no-console
-    console.debug('CnpjService.validate', { input: cnpj, normalized: n, opts });
+    // debug trace (enabled only when CNPJ_DEBUG env var is 'true')
+    if (process.env.CNPJ_DEBUG === 'true') {
+      // eslint-disable-next-line no-console
+      console.debug('CnpjService.validate', { input: cnpj, normalized: n, opts });
+    }
     // Only allow alphabetic characters in very specific positions.
     // Policy: letters are permitted only in the second DV position (index 13) when
     // `acceptAlfanumerico` is true. Any letters elsewhere are treated as invalid.
