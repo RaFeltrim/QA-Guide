@@ -5,7 +5,7 @@ Welcome to the comprehensive QA Guide repository, designed to help Quality Assur
 <div align="center">
   <br>
   <a href="pt-br/README.md">
-    <img src="https://img.shields.io/badge/Não%20sou%20familiarizado%20com%20Inglês%3F-Veja%20em%20PT--BR-blue?style=for-the-badge&logo=google-translate" alt="Não sou familiarizado com Inglês? Veja em PT-BR">
+    <img src="https://img.shields.io/badge/Não%20sou%20familiarizado%20com%20Inglês%3F-Veja%20em%20PT--BR-blue?style=for-the-badge&logo=google-translate" alt="Não é familiarizado com Inglês? Veja em PT-BR">
   </a>
   <br><br>
 </div>
